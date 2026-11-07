@@ -137,6 +137,14 @@
       font-size: 13px;
       color: var(--muted);
     }
+    .screenshot {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin: 8px 0 12px;
+    }
   </style>
 </head>
 <body>
@@ -157,11 +165,12 @@
     <section id="live-demo">
       <h2>Product Showcase (Prototype / Live App / 2-Min Video)</h2>
       <p>
-        <strong>Current Status:</strong> [Build 1: local prototype / Builds 2–4: local app / Build 5: cloud app]<br />
-        <strong>Demo:</strong> [Add a screenshot or GIF now; add the live cloud app URL in Build 5.]
+        <strong>Current Status:</strong> Build 1: local prototype<br />
+        <strong>Demo:</strong> Screenshot of the local prototype below. The live cloud app URL comes in Build 5.
       </p>
+      <img class="screenshot" src="prototype.png" width="800" height="820" alt="Burst or Not prototype: a semicircle gauge reading 62 (Hot), above three signal cards. Polymarket AI-hype odds score 36, OpenRouter model price trend scores 78, and AI share of global VC funding scores 73." />
       <p class="meta">
-        Ask your coding agent to embed a screenshot or GIF of your local prototype for Build 1. Keep this evidence current, then add your cloud app link and two-minute video in Build 5.
+        Burst or Not v0, November 7, 2026, with live Polymarket and OpenRouter data. Click a signal card in the app to see what's driving it.
       </p>
     </section>
 
@@ -216,10 +225,10 @@
       <div class="log-entry">
         <h3>Build 1 · Intent.md & Throwaway Prototype (Due Nov 9)</h3>
         <ul>
-          <li><strong>What shipped:</strong> [What you actually built; link your local prototype screenshot or GIF above.]</li>
-          <li><strong>Things learned with AI:</strong> [What you learned from AI practice and Terminus Episodes 1 and 2.]</li>
-          <li><strong>What broke / changed in PRD:</strong> [Fill in]</li>
-          <li><strong>Cost & time this week:</strong> $[0.00] · [0] hours</li>
+          <li><strong>What shipped:</strong> Burst or Not v0: a local web page with a 0–100 AI froth gauge and three signal cards: Polymarket AI-hype odds (live), OpenRouter model price trend (live), and AI share of global VC funding (manual, 64%, Crunchbase Q3 2026). PRD v1 published on this page. <a href="#live-demo">See the screenshot above.</a></li>
+          <li><strong>Things learned with AI:</strong> Terminal vs. Git vs. GitHub; branches and pull requests; GitHub Pages deploys only from main. The hardest part was judgment, not code: deciding whether falling model prices signal froth or healthy competition.</li>
+          <li><strong>What broke / changed in PRD:</strong> My first repo was created without the class template, so I recreated it. npm install hit a permissions error (fixed with sudo and --allow-scripts). Page changes didn't appear until PRs were merged and the browser cache was cleared. PRD decisions: treat falling prices as froth (below-cost land grab); use AI share of VC as the manual signal instead of Nvidia P/E.</li>
+          <li><strong>Cost & time this week:</strong> $0.00 out of pocket (Claude Pro subscription; Polymarket, OpenRouter, and GitHub Pages are free) · [N] hours</li>
         </ul>
       </div>
 
