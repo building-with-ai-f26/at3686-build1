@@ -42,4 +42,8 @@ git clone https://github.com/building-with-ai-f26/<your-repo-name>.git
 cd <your-repo-name>
 ```
 
+### Run the prototype
+
+No install step is needed. Open `app/index.html` in a browser (on macOS: `open app/index.html`). The page loads live data from Polymarket and OpenRouter, so it needs an internet connection. If a signal can't load, its card shows "Unavailable" and the score uses the remaining signals.
+
 If your app needs API keys, use a local environment file such as `.env`. Keep private keys out of source code, browser code, screenshots, and commits. The template ignores `.env`; `.env.example` contains placeholders only.
