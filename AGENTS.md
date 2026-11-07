@@ -3,15 +3,15 @@
 > Give this file to your coding agent and check that it is using these instructions. Keep the stack, commands, and ground rules current.
 
 ## 1. Project Overview
-- **What this repo builds:** [1–2 sentence summary]
+- **What this repo builds:** Burst or Not, a dashboard that shows a 0–100 AI froth score (Fearful → Frothy) built from Polymarket odds, OpenRouter model price trends, and one manually entered signal.
 - **Primary user & core workflow:** [See the living PRD in `docs/index.html`]
-- **Tech stack:** [e.g., Python 3.12 / FastAPI / Next.js / SQLite / OpenRouter API]
+- **Tech stack:** One static page (`app/index.html`): plain HTML, CSS, and JavaScript with no libraries or build step. It calls the public Polymarket Gamma API and OpenRouter models API directly from the browser, with no API keys.
 
 ## 2. Commands
-- **Install dependencies:** `[e.g., npm install / uv sync]`
-- **Run locally:** `[e.g., npm run dev]`
-- **Run deterministic tests:** `[e.g., pytest / npm test]`
-- **Run model evals:** `[e.g., python tests/eval.py]`
+- **Install dependencies:** None.
+- **Run locally:** `open app/index.html` (macOS), or double-click the file. It needs an internet connection for the live signals.
+- **Run deterministic tests:** None yet.
+- **Run model evals:** None yet (Build 4).
 
 ## 3. Non-Negotiable Engineering Rules
 1. **Plan before coding:** Before touching multiple files, propose a brief plan and wait for approval.
