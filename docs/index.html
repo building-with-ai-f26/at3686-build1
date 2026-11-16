@@ -5,9 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Burst or Not · Building with AI (Fall 2026)</title>
 
-  <!-- Week 1: create your PostHog account only.
-       Build 2: paste your project's current PostHog web snippet here,
-       then install analytics in the local app and verify events. -->
+  <!-- PostHog analytics (US Cloud). Pageviews and autocaptured clicks are on by
+       default; session recording also needs to be enabled in PostHog project
+       settings. The phc_ project token is public by design (safe in browser code). -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_v9N7BjkJZcVr6dw8jJmxisTzkQdzmr5evBZwhhgEMRNv', {
+      api_host: 'https://us.i.posthog.com',
+      defaults: '2026-08-30',
+      disable_session_recording: false,
+    })
+  </script>
 
   <style>
     :root {
@@ -165,12 +173,12 @@
     <section id="live-demo">
       <h2>Product Showcase (Prototype / Live App / 2-Min Video)</h2>
       <p>
-        <strong>Current Status:</strong> Build 1: local prototype<br />
-        <strong>Demo:</strong> Screenshot of the local prototype below. The live cloud app URL comes in Build 5.
+        <strong>Current Status:</strong> Build 2: local app (runs on localhost)<br />
+        <strong>Demo:</strong> Screenshot of the local app below. The live cloud app URL comes in Build 5.
       </p>
-      <img class="screenshot" src="prototype.png" width="800" height="820" alt="Burst or Not prototype: a semicircle gauge reading 62 (Hot), above three signal cards. Polymarket AI-hype odds score 36, OpenRouter model price trend scores 78, and AI share of global VC funding scores 73." />
+      <img class="screenshot" src="app-build2.png" width="800" height="900" alt="Burst or Not local app: a semicircle froth gauge with the score and band, a Refresh signals button, and three signal cards for Polymarket AI-hype odds, OpenRouter model price trend, and AI share of global VC funding." />
       <p class="meta">
-        Burst or Not v0, November 7, 2026, with live Polymarket and OpenRouter data. Click a signal card in the app to see what's driving it.
+        Burst or Not, Build 2, November 15, 2026, with live Polymarket and OpenRouter data. "Refresh signals" re-fetches both live sources and recalculates the score; click a signal card to see what's driving it.
       </p>
     </section>
 
@@ -193,18 +201,25 @@
       </ul>
 
       <h3>3. How It Works Under the Hood & Riskiest Assumption (Week 2+)</h3>
-      <p><strong>Riskiest Assumption:</strong> [What is the #1 technical or user risk that could sink this product?]</p>
-      <p><strong>Simple Architecture:</strong> [User Input] → [Your App / Server] → [AI Model / Tool] → [Output]</p>
+      <p><strong>Riskiest Assumption:</strong> The froth score isn't credible: the signals don't move sensibly, or users don't trust them.</p>
+      <p><strong>How this build tests it:</strong></p>
+      <ul>
+        <li><strong>Live refresh</strong> shows whether the score moves sensibly as Polymarket odds and OpenRouter prices change.</li>
+        <li><strong>PostHog</strong> shows which signal cards users open, meaning which drivers they check before trusting the score.</li>
+        <li><strong>Pod testing</strong> checks whether people understand what the score means and why it's at its current level.</li>
+      </ul>
+      <p><strong>Simple Architecture:</strong> Browser → Polymarket and OpenRouter public APIs (live odds and model prices) → scoring in the page (each signal mapped to 0–100, then averaged with the manual VC-share signal) → gauge and signal cards. There is no server, database, or AI model call; everything runs in the browser.</p>
+      <p><strong>Cost per run:</strong> $0. Both data sources are free public endpoints that need no API keys.</p>
 
       <h3>4. Unit Economics & Analytics Snapshot (Updated Weekly)</h3>
       <div class="grid-2">
         <div class="stat-box">
           <div class="stat-label">Cumulative Build Spend</div>
-          <div class="stat-value">[Record actual spend]</div>
+          <div class="stat-value">$0.00 out of pocket</div>
         </div>
         <div class="stat-box">
           <div class="stat-label">Est. Cost Per User Run</div>
-          <div class="stat-value">[Not yet estimated]</div>
+          <div class="stat-value">$0 (public endpoints, no keys)</div>
         </div>
         <div class="stat-box">
           <div class="stat-label">User Evidence (Analytics from Build 2)</div>
@@ -225,7 +240,7 @@
       <div class="log-entry">
         <h3>Build 1 · Intent.md & Throwaway Prototype (Due Nov 9)</h3>
         <ul>
-          <li><strong>What shipped:</strong> Burst or Not v0: a local web page with a 0–100 AI froth gauge and three signal cards: Polymarket AI-hype odds (live), OpenRouter model price trend (live), and AI share of global VC funding (manual, 64%, Crunchbase Q3 2026). PRD v1 published on this page. <a href="#live-demo">See the screenshot above.</a></li>
+          <li><strong>What shipped:</strong> Burst or Not v0: a local web page with a 0–100 AI froth gauge and three signal cards: Polymarket AI-hype odds (live), OpenRouter model price trend (live), and AI share of global VC funding (manual, 64%, Crunchbase Q3 2026). PRD v1 published on this page. <a href="prototype.png">See the Build 1 screenshot.</a></li>
           <li><strong>Things learned with AI:</strong> Terminal vs. Git vs. GitHub; branches and pull requests; GitHub Pages deploys only from main. The hardest part was judgment, not code: deciding whether falling model prices signal froth or healthy competition.</li>
           <li><strong>What broke / changed in PRD:</strong> My first repo was created without the class template, so I recreated it. npm install hit a permissions error (fixed with sudo and --allow-scripts). Page changes didn't appear until PRs were merged and the browser cache was cleared. PRD decisions: treat falling prices as froth (below-cost land grab); use AI share of VC as the manual signal instead of Nvidia P/E.</li>
           <li><strong>Cost & time this week:</strong> $0.00 out of pocket (Claude Pro subscription; Polymarket, OpenRouter, and GitHub Pages are free) · [N] hours</li>
@@ -235,9 +250,10 @@
       <div class="log-entry">
         <h3>Build 2 · Smallest Local Version & PostHog (Due Nov 16)</h3>
         <ul>
-          <li><strong>What shipped:</strong> [Local working slice, PostHog verified on this page and the local app, PRD v2, and local setup in AGENTS.md]</li>
-          <li><strong>What broke / changed in PRD:</strong> [Fill in]</li>
-          <li><strong>Cost & time this week:</strong> $[0.00] · [0] hours</li>
+          <li><strong>What shipped:</strong> A "Refresh signals" button that re-fetches Polymarket and OpenRouter live and recalculates the score. PostHog (pageviews, autocaptured clicks, session recording) is installed on this page and the local app, which now runs on localhost. The app also tracks which signal cards people open. PRD v2 adds the riskiest assumption, how this build tests it, the data flow, and cost per run. Setup and run instructions are in AGENTS.md.</li>
+          <li><strong>Things learned with AI:</strong> PostHog needs the app served over http://localhost, not opened as a file. A "refresh" can quietly reuse a cached response, so I made every refresh a real network call. A PostHog project token (phc_) is public by design, unlike a secret API key.</li>
+          <li><strong>What broke / changed in PRD:</strong> PRD v2 names the biggest risk: the froth score isn't credible. This build tests it with live refresh, PostHog card-open data, and pod testing.</li>
+          <li><strong>Cost & time this week:</strong> $0.00 out of pocket · [N] hours</li>
         </ul>
       </div>
 
