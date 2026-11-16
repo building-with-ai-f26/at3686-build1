@@ -253,7 +253,7 @@
           <li><strong>What shipped:</strong> A "Refresh signals" button that re-fetches Polymarket and OpenRouter live and recalculates the score. PostHog (pageviews, autocaptured clicks, session recording) is installed on this page and the local app, which now runs on localhost. The app also tracks which signal cards people open. PRD v2 adds the riskiest assumption, how this build tests it, the data flow, and cost per run. Setup and run instructions are in AGENTS.md.</li>
           <li><strong>Things learned with AI:</strong> PostHog needs the app served over http://localhost, not opened as a file. A "refresh" can quietly reuse a cached response, so I made every refresh a real network call. A PostHog project token (phc_) is public by design, unlike a secret API key.</li>
           <li><strong>What broke / changed in PRD:</strong> PRD v2 names the biggest risk: the froth score isn't credible. This build tests it with live refresh, PostHog card-open data, and pod testing.</li>
-          <li><strong>Cost & time this week:</strong> $0.00 out of pocket · [N] hours</li>
+          <li><strong>Cost & time this week:</strong> $0.00 out of pocket · 1 hour</li>
         </ul>
       </div>
 
