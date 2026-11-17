@@ -173,12 +173,12 @@
     <section id="live-demo">
       <h2>Product Showcase (Prototype / Live App / 2-Min Video)</h2>
       <p>
-        <strong>Current Status:</strong> Build 2: local app (runs on localhost)<br />
+        <strong>Current Status:</strong> Build 3 (in progress): local app with Burst Index history (runs on localhost)<br />
         <strong>Demo:</strong> Screenshot of the local app below. The live cloud app URL comes in Build 5.
       </p>
-      <img class="screenshot" src="app-build2.png" width="800" height="900" alt="Burst or Not local app: a semicircle froth gauge with the score and band, a Refresh signals button, and three signal cards for Polymarket AI-hype odds, OpenRouter model price trend, and AI share of global VC funding." />
+      <img class="screenshot" src="app-build3.png" width="900" height="1051" alt="Burst or Not local app in a dark theme: the Burst Index at 40.6 (Neutral), down 29.0 points since October 23, above a line chart of the index from October 23 to November 17 with band names on the right, a biggest-driver line naming the OpenRouter price trend, and three signal cards with small trend lines: Polymarket 15, OpenRouter 33, and AI share of global VC funding 73." />
       <p class="meta">
-        Burst or Not, Build 2, November 15, 2026, with live Polymarket and OpenRouter data. "Refresh signals" re-fetches both live sources and recalculates the score; click a signal card to see what's driving it.
+        Burst or Not, Build 3 in progress, November 17, 2026, with live data. The Burst Index chart shows daily history since October 23 (1W / 1M / 3M / All), with a hover readout for each day and the biggest driver over the selected range. <a href="app-build2.png">See the Build 2 screenshot.</a>
       </p>
     </section>
 
@@ -194,7 +194,7 @@
 
       <h3>2. Scope & Explicit Non-Goals</h3>
       <ul>
-        <li><strong>In Scope (Core Workflow):</strong> Open app → see score and needle → click a signal → see what's driving it.</li>
+        <li><strong>In Scope (Core Workflow):</strong> Open app → see the score and its trend → click a signal → see what's driving it.</li>
         <li><strong>Out of Scope #1:</strong> Investment advice. The score is a sentiment read, not a recommendation.</li>
         <li><strong>Out of Scope #2:</strong> Trading or portfolio features.</li>
         <li><strong>Out of Scope #3:</strong> User accounts.</li>
@@ -208,7 +208,8 @@
         <li><strong>PostHog</strong> shows which signal cards users open, meaning which drivers they check before trusting the score.</li>
         <li><strong>Pod testing</strong> checks whether people understand what the score means and why it's at its current level.</li>
       </ul>
-      <p><strong>Simple Architecture:</strong> Browser → Polymarket and OpenRouter public APIs (live odds and model prices) → scoring in the page (each signal mapped to 0–100, then averaged with the manual VC-share signal) → gauge and signal cards. There is no server, database, or AI model call; everything runs in the browser.</p>
+      <p><strong>Simple Architecture:</strong> Browser → Polymarket and OpenRouter public APIs (live odds and model prices) → scoring in the page (each signal mapped to 0–100, then averaged with the manual VC-share signal) → headline score, history chart, and signal cards. There is no server, database, or AI model call; everything runs in the browser.</p>
+      <p><strong>Score history:</strong> Like a stock index, each past day since October 23, 2026 is recalculated with today's formula from that day's inputs: Polymarket's real daily prices, OpenRouter models released before that day (at today's listed prices, so approximate), and the VC-share figure in effect. A past day only counts if it has the same signals as today, so a failed data source never creates a fake jump.</p>
       <p><strong>Cost per run:</strong> $0. Both data sources are free public endpoints that need no API keys.</p>
 
       <h3>4. Unit Economics & Analytics Snapshot (Updated Weekly)</h3>
@@ -260,9 +261,9 @@
       <div class="log-entry">
         <h3>Build 3 · Build.exe: The Core Workflow (Due Nov 23)</h3>
         <ul>
-          <li><strong>What shipped:</strong> [End-to-end workflow working with real inputs + PostHog funnel events]</li>
-          <li><strong>What broke / changed in PRD:</strong> [Fill in]</li>
-          <li><strong>Cost & time this week:</strong> $[0.00] · [0] hours</li>
+          <li><strong>What shipped (in progress):</strong> The Burst Index tracker: a daily history chart of the score since October 23 with 1W / 1M / 3M / All ranges, a hover readout, the biggest driver over each range, small trend lines on each signal card, and a data table. New dark, more professional design. New PostHog event: <code>chart_range_changed</code>.</li>
+          <li><strong>What broke / changed in PRD:</strong> The history tested the riskiest assumption right away. The index fell from 69.6 to 40.6 between October 23 and November 17, mostly from the OpenRouter price trend, and that signal turned out to track <em>which</em> models launched (a wave of expensive frontier models) more than real price changes. The core workflow now reads "see the score and its trend" instead of "score and needle."</li>
+          <li><strong>Cost & time this week:</strong> $0.00 out of pocket · [N] hours</li>
         </ul>
       </div>
 

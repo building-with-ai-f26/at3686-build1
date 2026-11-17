@@ -44,6 +44,6 @@ cd <your-repo-name>
 
 ### Run the prototype
 
-No install step is needed. From the repo root, run `python3 -m http.server 8000`, then open http://localhost:8000/app/. (Serving over localhost lets PostHog analytics work; stop the server with Ctrl+C.) The page loads live data from Polymarket and OpenRouter, so it needs an internet connection. If a signal can't load, its card shows "Unavailable" and the score uses the remaining signals.
+No install step is needed. From the repo root, run `python3 -m http.server 8000`, then open http://localhost:8000/app/. (Opening the file directly won't work: the app uses JavaScript modules, and PostHog needs a real origin. Stop the server with Ctrl+C.) The page loads live data from Polymarket and OpenRouter, so it needs an internet connection. If a signal can't load, its card shows "Unavailable" and the score uses the remaining signals.
 
 If your app needs API keys, use a local environment file such as `.env`. Keep private keys out of source code, browser code, screenshots, and commits. The template ignores `.env`; `.env.example` contains placeholders only.
