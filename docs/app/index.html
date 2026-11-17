@@ -371,7 +371,7 @@
         return {
           headline: `${m.value}% of global VC funding · ${escapeHtml(MANUAL_SIGNAL.source)}, ${escapeHtml(m.quarter)}`,
           body: `<ul>${MANUAL_SIGNAL.values.map((v) => `<li>${escapeHtml(v.quarter)}: ${v.approx ? "~" : ""}${v.value}%${v === m ? " (current)" : ""}</li>`).join("")}</ul>
-            <p class="meta">Source: ${escapeHtml(MANUAL_SIGNAL.source)}, ${escapeHtml(m.quarter)}. Calm = 20%, Frothy = 80%. Entered by hand; update MANUAL_SIGNAL in app/signals.js each quarter.</p>`,
+            <p class="meta">Source: ${escapeHtml(MANUAL_SIGNAL.source)}, ${escapeHtml(m.quarter)}. Calm = 20%, Frothy = 80%. Entered by hand; update MANUAL_SIGNAL in docs/app/signals.js each quarter.</p>`,
         };
       }
       return null;
