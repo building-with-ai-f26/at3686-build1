@@ -161,7 +161,71 @@
     .table-scroll { overflow-x: auto; }
     footer { margin-top: 8px; }
 
+    /* Capitol Hill AI trades. Buys/sells use validated categorical slots 1 and 2 (dark). */
+    :root { --buy: #3987e5; --sell: #d95926; --exchange: #898781; }
+    .cg-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 16px; flex-wrap: wrap; }
+    .cg-head h2 { margin: 0; font-size: 18px; }
+    .cg-sub { margin: 4px 0 16px; }
+    .cg-legend { display: flex; gap: 16px; font-size: 13px; color: var(--text-2); margin-bottom: 8px; }
+    .cg-key { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+    .cg-key-buy { background: var(--buy); }
+    .cg-key-sell { background: var(--sell); }
+    .cg-key-exchange { background: var(--exchange); }
+    .cg-chart { display: grid; gap: 8px; }
+    .cg-row { display: grid; grid-template-columns: minmax(120px, 170px) 1fr 1fr; align-items: center; }
+    .cg-label { font-size: 13px; color: var(--text-2); padding-right: 8px; }
+    .cg-half { display: flex; align-items: center; gap: 6px; height: 22px; }
+    .cg-sell { flex-direction: row-reverse; border-right: 1px solid var(--axis); padding-right: 2px; }
+    .cg-buy { padding-left: 2px; }
+    .cg-bar { position: relative; height: 16px; min-width: 2px; outline-offset: 2px; }
+    .cg-sell .cg-bar { background: var(--sell); border-radius: 4px 0 0 4px; }
+    .cg-buy .cg-bar { background: var(--buy); border-radius: 0 4px 4px 0; }
+    .cg-count { font-size: 12px; color: var(--text); font-variant-numeric: tabular-nums; }
+    .cg-bar:hover::after, .cg-bar:focus::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 0;
+      z-index: 2;
+      width: max-content;
+      max-width: 260px;
+      padding: 6px 8px;
+      background: var(--page);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 12px;
+      pointer-events: none;
+    }
+    .cg-sell .cg-bar:hover::after, .cg-sell .cg-bar:focus::after { left: auto; right: 0; }
+    .cg-totals { font-size: 14px; color: var(--text-2); margin: 16px 0 6px; }
+    .cg-totals strong { color: var(--text); }
+    .cg-notes { padding-left: 18px; margin: 0 0 12px; }
+    .cg-notes li { margin-bottom: 4px; }
+    .cg-notes strong { color: var(--text-2); }
+    .cg-tables summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--text-2); }
+    .cg-search { margin-top: 20px; border-top: 1px solid var(--grid); padding-top: 16px; }
+    .cg-search label { display: block; font-weight: 600; margin-bottom: 6px; }
+    .cg-search-row { display: flex; gap: 8px; }
+    .cg-search input {
+      flex: 1;
+      min-width: 0;
+      font: inherit;
+      color: var(--text);
+      background: var(--page);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 10px;
+    }
+    .cg-search .refresh { margin: 0; }
+    .cg-message { margin: 12px 0 0; }
+    .cg-member { margin-top: 16px; }
+    .cg-member-name { font-weight: 600; }
+    .cg-member td:nth-child(2), .cg-member th:nth-child(2) { text-align: left; }
+
     @media (max-width: 560px) {
+      .cg-row { grid-template-columns: 1fr 1fr; row-gap: 2px; }
+      .cg-label { grid-column: 1 / -1; }
       .hero-value { font-size: 48px; }
       .hero-side { align-items: flex-start; }
       .spark { display: none; }
@@ -171,7 +235,7 @@
 <body>
   <header class="topbar">
     <div class="brand">Burst or Not</div>
-    <div class="meta">AI froth index · Not investment advice</div>
+    <div class="meta">AI froth index · Not investment advice · Congress data via <a href="https://www.bargo.ai/free-apis/congress" target="_blank" rel="noopener">Bargo</a></div>
   </header>
 
   <main>
@@ -212,6 +276,24 @@
       <div class="table-scroll" id="table"></div>
     </details>
 
+    <section class="panel" id="congress" aria-labelledby="cg-title">
+      <div class="cg-head">
+        <h2 id="cg-title">Capitol Hill AI trades</h2>
+        <div class="meta">Data via <a href="https://www.bargo.ai/free-apis/congress" target="_blank" rel="noopener">Bargo</a> · Not investment advice</div>
+      </div>
+      <p class="meta cg-sub">Disclosed stock trades by members of Congress in AI stocks over the last ~3 months, across all members. Context only: not part of the Burst Index.</p>
+      <div id="cg-summary"><p class="meta cg-message">Loading…</p></div>
+
+      <form class="cg-search" id="cg-search" role="search">
+        <label for="cg-query">Search a member</label>
+        <div class="cg-search-row">
+          <input id="cg-query" name="member" type="search" placeholder="e.g. Pelosi" autocomplete="off" />
+          <button class="refresh" type="submit">Search</button>
+        </div>
+      </form>
+      <div id="cg-results" aria-live="polite"></div>
+    </section>
+
     <footer class="meta">
       Live data: Polymarket and OpenRouter public APIs. Prototype scoring; the calm/frothy cutoffs are judgment calls.
     </footer>
@@ -225,6 +307,7 @@
       manualAt, manualSubScore,
     } from "./signals.js";
     import { loadHistory, drawIndexChart, sparkline, todayIso, formatDate } from "./history.js";
+    import { initCongressPanel } from "./congress.js";
 
     const RANGES = { "1W": 7, "1M": 30, "3M": 90, All: Infinity };
     const RANGE_WORDS = { "1W": "past week", "1M": "past month", "3M": "past 3 months" };
@@ -460,6 +543,7 @@
     }
 
     main();
+    initCongressPanel(); // independent of the Burst Index; loads in parallel
   </script>
 </body>
 </html>

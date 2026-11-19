@@ -1,0 +1,46 @@
+# Daily refresh of the "Capitol Hill AI trades" summary.
+# Writes AGGREGATES ONLY to docs/data/ (Bargo's terms forbid republishing raw
+# trade records) and commits to main only when the data changed, which
+# redeploys GitHub Pages.
+name: Update Congress AI trades summary
+
+on:
+  schedule:
+    - cron: "17 13 * * *" # daily, 13:17 UTC (8:17 AM New York in winter)
+  workflow_dispatch: # "Run workflow" button on the Actions tab
+
+permissions:
+  contents: write # needed to commit the updated JSON
+
+concurrency:
+  group: congress-trades
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build summary
+        run: node scripts/update-congress-summary.mjs
+        env:
+          # Optional free key from https://www.bargo.ai/free-apis/dash, stored as a
+          # repository secret. It is never written to the page or the repo.
+          BARGO_API_KEY: ${{ secrets.BARGO_API_KEY }}
+
+      - name: Commit if changed
+        run: |
+          git add docs/data
+          if git diff --cached --quiet; then
+            echo "No data changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update Congress AI trades summary"
+          git push
