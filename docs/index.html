@@ -199,6 +199,7 @@
         <li><strong>Out of Scope #1:</strong> Investment advice. The score is a sentiment read, not a recommendation.</li>
         <li><strong>Out of Scope #2:</strong> Trading or portfolio features.</li>
         <li><strong>Out of Scope #3:</strong> User accounts.</li>
+        <li><strong>Out of Scope #4:</strong> Rankings of individual politicians' trading performance. The Capitol Hill panel shows buys vs. sells across all members, plus member lookup, but no "who's winning" leaderboard: disclosures give only amount ranges and no share counts, so any performance figure would be a guess.</li>
       </ul>
 
       <h3>3. How It Works Under the Hood & Riskiest Assumption (Week 2+)</h3>
@@ -211,6 +212,7 @@
       </ul>
       <p><strong>Simple Architecture:</strong> Browser → Polymarket and OpenRouter public APIs (live odds and model prices) → scoring in the page (each signal mapped to 0–100, then averaged with the manual VC-share signal) → headline score, history chart, and signal cards. There is no server, database, or AI model call; everything runs in the browser.</p>
       <p><strong>Score history:</strong> Like a stock index, each past day since October 23, 2026 is recalculated with today's formula from that day's inputs: Polymarket's real daily prices, OpenRouter models released before that day (at today's listed prices, so approximate), and the VC-share figure in effect. A past day only counts if it has the same signals as today, so a failed data source never creates a fake jump.</p>
+      <p><strong>Capitol Hill AI trades (context, not in the score):</strong> A daily GitHub Action fetches the last ~3 months of disclosed congressional trades in NVDA, MSFT, GOOGL/GOOG, META, AMD, AVGO, TSM, and PLTR from Bargo, matches party using the public-domain congress-legislators dataset, and saves <em>aggregates only</em> (buys vs. sells by chamber and party). Bargo's terms forbid republishing raw trade records, so member search runs live from the visitor's browser instead. The API key lives in a GitHub secret, never in the page.</p>
       <p><strong>Cost per run:</strong> $0. Both data sources are free public endpoints that need no API keys.</p>
 
       <h3>4. Unit Economics & Analytics Snapshot (Updated Weekly)</h3>
@@ -262,7 +264,7 @@
       <div class="log-entry">
         <h3>Build 3 · Build.exe: The Core Workflow (Due Nov 23)</h3>
         <ul>
-          <li><strong>What shipped (in progress):</strong> The Burst Index tracker: a daily history chart of the score since October 23 with 1W / 1M / 3M / All ranges, a hover readout, the biggest driver over each range, small trend lines on each signal card, and a data table. New dark, more professional design. New PostHog event: <code>chart_range_changed</code>.</li>
+          <li><strong>What shipped (in progress):</strong> The Burst Index tracker: a daily history chart of the score since October 23 with 1W / 1M / 3M / All ranges, a hover readout, the biggest driver over each range, small trend lines on each signal card, and a data table. New dark, more professional design. New PostHog event: <code>chart_range_changed</code>. The app is now published on GitHub Pages. Added a "Capitol Hill AI trades" panel: buys vs. sells of AI stocks by chamber and party (daily aggregates), live member search with shareable links, the 45-day disclosure lag, and range-based amounts (new PostHog event: <code>congress_search</code>).</li>
           <li><strong>What broke / changed in PRD:</strong> The history tested the riskiest assumption right away. The index fell from 69.6 to 40.6 between October 23 and November 17, mostly from the OpenRouter price trend, and that signal turned out to track <em>which</em> models launched (a wave of expensive frontier models) more than real price changes. The core workflow now reads "see the score and its trend" instead of "score and needle."</li>
           <li><strong>Cost & time this week:</strong> $0.00 out of pocket · [N] hours</li>
         </ul>
