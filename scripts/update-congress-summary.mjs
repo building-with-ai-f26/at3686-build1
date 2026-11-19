@@ -92,14 +92,11 @@ async function writeIfChanged(name, data, ignoreKey) {
 async function main() {
   const lookup = buildPartyLookup((await getJson(LEGISLATORS)).data);
 
-  const seen = new Set();
+  // Count every record Bargo returns. Bargo already de-duplicates; records that
+  // look identical are usually separate trades (for example, the same purchase
+  // in a member's and a spouse's account; Bargo omits the account owner).
   const trades = [];
-  for (const ticker of AI_TICKERS) {
-    for (const t of await tradesFor(ticker)) {
-      const key = [t.member_slug, t.ticker, t.transaction_date, t.type, t.amount_range, t.disclosure_date].join("|");
-      if (!seen.has(key)) { seen.add(key); trades.push(t); }
-    }
-  }
+  for (const ticker of AI_TICKERS) trades.push(...(await tradesFor(ticker)));
   if (trades.length === 0) throw new Error("No trades returned; not overwriting the summary.");
 
   const groups = {};
