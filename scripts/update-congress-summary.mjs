@@ -22,16 +22,31 @@ const headers = key ? { "X-Api-Key": key } : {};
 const PAGE_SIZE = key ? 100 : 25;
 console.log(key ? "Using BARGO_API_KEY." : "No BARGO_API_KEY: using Bargo's keyless free limits.");
 
+// Bargo can be slow, so allow 45 s and retry once on a timeout, network error, or 5xx.
 async function getJson(url, options = {}) {
-  const response = await fetch(url, { ...options, signal: AbortSignal.timeout(20000) });
-  if (!response.ok) throw new Error(`${response.status} ${response.statusText} for ${url.split("?")[0]}`);
-  return { data: await response.json(), rowsLeft: Number(response.headers.get("x-ratelimit-rows-remaining")) };
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const response = await fetch(url, { ...options, signal: AbortSignal.timeout(45000) });
+      if (!response.ok) {
+        const error = new Error(`${response.status} ${response.statusText} for ${url.split("?")[0]}`);
+        error.retryable = response.status >= 500;
+        throw error;
+      }
+      return { data: await response.json(), rowsLeft: Number(response.headers.get("x-ratelimit-rows-remaining")) };
+    } catch (error) {
+      const retryable = error.retryable ?? true; // timeouts and network errors have no status
+      if (!retryable || attempt >= 2) throw error;
+      console.log(`Retrying once after: ${error.message}`);
+      await new Promise((resolve) => setTimeout(resolve, 5000));
+    }
+  }
 }
 
 // Every trade for one ticker in Bargo's free window (last ~3 months), all pages.
+// Bargo's pages start at 0 (page=1 is the SECOND page); this isn't in its docs.
 async function tradesFor(ticker) {
   const trades = [];
-  for (let page = 1; page <= 20; page++) {
+  for (let page = 0; page < 20; page++) {
     const { data, rowsLeft } = await getJson(`${API}/trades?ticker=${ticker}&limit=${PAGE_SIZE}&page=${page}`, { headers });
     console.log(`${ticker} page ${page}: ${data.trades.length} trades (rows left today: ${Number.isFinite(rowsLeft) ? rowsLeft : "not reported"})`);
     if (data.trades.length === 0 && Number.isFinite(rowsLeft) && rowsLeft < PAGE_SIZE) {
