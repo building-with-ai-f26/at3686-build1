@@ -8,7 +8,9 @@
 import { AI_TICKERS, BARGO_API, partyFor, partyBucket } from "./congress-common.js";
 import { escapeHtml } from "./signals.js";
 
-const SEARCH_LIMIT = 25; // rows per search; keyless visitors get 100 rows/day
+// Rows per search. Without a key, Bargo allows 100 rows per network address per
+// day, shared by everyone on the same Wi-Fi, so 10 rows ≈ 10 searches a day.
+const SEARCH_LIMIT = 10;
 const TRACKED = new Set(AI_TICKERS);
 const PARTY_PLURAL = { Democrat: "Democrats", Republican: "Republicans", Independent: "Independents", Unknown: "Party unknown" };
 const CHAMBER = { house: "House", senate: "Senate" };
