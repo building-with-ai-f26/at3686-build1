@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T21:04:27.883Z",
+  "generated_at": "2026-11-21T20:05:32.086Z",
   "source": {
     "name": "Bargo",
     "url": "https://www.bargo.ai/free-apis/congress",
@@ -17,19 +17,19 @@
     "PLTR"
   ],
   "window": {
-    "first_transaction": "2026-08-20",
+    "first_transaction": "2026-08-21",
     "last_transaction": "2026-11-05",
     "last_disclosure": "2026-11-19"
   },
   "totals": {
-    "trades": 46,
+    "trades": 43,
     "buys": 20,
-    "sells": 26,
+    "sells": 23,
     "exchanges": 0,
     "unmatched_party": 0
   },
   "disclosure_lag_days": {
-    "median": 16,
+    "median": 15,
     "max": 44,
     "over_45": 0
   },
@@ -38,22 +38,22 @@
       "chamber": "house",
       "party": "Democrat",
       "buys": 9,
-      "sells": 3,
+      "sells": 2,
       "buy_amount_low": 9009,
       "buy_amount_high": 135000,
-      "sell_amount_low": 3003,
-      "sell_amount_high": 45000,
+      "sell_amount_low": 2002,
+      "sell_amount_high": 30000,
       "open_ended": 0
     },
     {
       "chamber": "house",
       "party": "Republican",
       "buys": 11,
-      "sells": 20,
+      "sells": 18,
       "buy_amount_low": 11011,
       "buy_amount_high": 165000,
-      "sell_amount_low": 536020,
-      "sell_amount_high": 1365000,
+      "sell_amount_low": 534018,
+      "sell_amount_high": 1335000,
       "open_ended": 0
     },
     {
@@ -103,21 +103,21 @@
     {
       "ticker": "GOOG",
       "buys": 3,
-      "sells": 6,
+      "sells": 4,
       "buy_amount_low": 3003,
       "buy_amount_high": 45000,
-      "sell_amount_low": 168006,
-      "sell_amount_high": 445000,
+      "sell_amount_low": 166004,
+      "sell_amount_high": 415000,
       "open_ended": 0
     },
     {
       "ticker": "META",
       "buys": 3,
-      "sells": 3,
+      "sells": 2,
       "buy_amount_low": 3003,
       "buy_amount_high": 45000,
-      "sell_amount_low": 3003,
-      "sell_amount_high": 45000,
+      "sell_amount_low": 2002,
+      "sell_amount_high": 30000,
       "open_ended": 0
     },
     {
