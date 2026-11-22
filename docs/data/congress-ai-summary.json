@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T20:05:32.086Z",
+  "generated_at": "2026-11-22T20:20:59.153Z",
   "source": {
     "name": "Bargo",
     "url": "https://www.bargo.ai/free-apis/congress",
@@ -17,19 +17,19 @@
     "PLTR"
   ],
   "window": {
-    "first_transaction": "2026-08-21",
+    "first_transaction": "2026-08-24",
     "last_transaction": "2026-11-05",
     "last_disclosure": "2026-11-19"
   },
   "totals": {
-    "trades": 43,
+    "trades": 42,
     "buys": 20,
-    "sells": 23,
+    "sells": 22,
     "exchanges": 0,
     "unmatched_party": 0
   },
   "disclosure_lag_days": {
-    "median": 15,
+    "median": 15.5,
     "max": 44,
     "over_45": 0
   },
@@ -49,11 +49,11 @@
       "chamber": "house",
       "party": "Republican",
       "buys": 11,
-      "sells": 18,
+      "sells": 17,
       "buy_amount_low": 11011,
       "buy_amount_high": 165000,
-      "sell_amount_low": 534018,
-      "sell_amount_high": 1335000,
+      "sell_amount_low": 519017,
+      "sell_amount_high": 1285000,
       "open_ended": 0
     },
     {
@@ -83,11 +83,11 @@
     {
       "ticker": "MSFT",
       "buys": 4,
-      "sells": 9,
+      "sells": 8,
       "buy_amount_low": 4004,
       "buy_amount_high": 60000,
-      "sell_amount_low": 300009,
-      "sell_amount_high": 725000,
+      "sell_amount_low": 285008,
+      "sell_amount_high": 675000,
       "open_ended": 0
     },
     {
