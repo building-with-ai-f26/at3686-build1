@@ -238,6 +238,7 @@
     <section id="security">
       <h2>Security</h2>
       <p class="meta">Audit of the repo and the live app on November 23, 2026. Fixes shipped in the same week.</p>
+      <p><a class="btn btn-secondary" href="https://github.com/building-with-ai-f26/at3686-build1/blob/main/SECURITY.md" target="_blank" rel="noopener">Security policy (SECURITY.md) →</a></p>
       <ul>
         <li><strong>Data from outside sources:</strong> every name, question, and amount from Polymarket, OpenRouter, and Bargo is escaped before it appears on the page, and numbers are converted to numbers first. Checked by loading a fake Bargo result with a hostile member name (HTML and script tags): it showed as plain text and nothing ran.</li>
         <li><strong>Content-Security-Policy (fixed):</strong> both pages now carry a policy that runs only our own scripts and PostHog's, blocks inline scripts, and lets the app talk only to Polymarket, OpenRouter, Bargo, and PostHog. All JavaScript moved out of the pages into files for this. GitHub Pages can't send security headers, so the policy is a meta tag.</li>
