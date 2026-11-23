@@ -5,17 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Burst or Not · Building with AI (Fall 2026)</title>
 
-  <!-- PostHog analytics (US Cloud). Pageviews and autocaptured clicks are on by
-       default; session recording also needs to be enabled in PostHog project
-       settings. The phc_ project token is public by design (safe in browser code). -->
-  <script>
-    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('phc_v9N7BjkJZcVr6dw8jJmxisTzkQdzmr5evBZwhhgEMRNv', {
-      api_host: 'https://us.i.posthog.com',
-      defaults: '2026-08-30',
-      disable_session_recording: false,
-    })
-  </script>
+  <!-- Content-Security-Policy: the browser runs only our own scripts and PostHog's,
+       and connects only to the hosts in connect-src (PostHog).
+       GitHub Pages can't send security headers, so this meta tag is the policy.
+       Inline scripts are blocked (all JavaScript lives in .js files). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://us-assets.i.posthog.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://us-assets.i.posthog.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; connect-src 'self' https://us.i.posthog.com https://us-assets.i.posthog.com" />
+
+  <script src="posthog.js"></script>
 
   <style>
     :root {
@@ -163,8 +159,9 @@
       <h1>Burst or Not</h1>
       <p class="tagline">Is the AI bubble about to burst? A 10-second read for MBA students and VC-curious peers: one 0–100 froth score built from Polymarket odds, OpenRouter price trends, and one manually entered signal.</p>
       <div class="cta-row">
-        <a class="btn" href="#live-demo" onclick="window.posthog && posthog.capture('clicked_try_product')">See the Product →</a>
+        <a class="btn" href="#live-demo" data-ph-event="clicked_try_product">See the Product →</a>
         <a class="btn btn-secondary" href="#prd">Read the Living PRD</a>
+        <a class="btn btn-secondary" href="#security">Security</a>
         <a class="btn btn-secondary" href="#build-log">Weekly Build Log</a>
       </div>
     </header>
@@ -234,6 +231,21 @@
           <div class="stat-value">TBD</div>
         </div>
       </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section id="security">
+      <h2>Security</h2>
+      <p class="meta">Audit of the repo and the live app on November 23, 2026. Fixes shipped in the same week.</p>
+      <ul>
+        <li><strong>Data from outside sources:</strong> every name, question, and amount from Polymarket, OpenRouter, and Bargo is escaped before it appears on the page, and numbers are converted to numbers first. Checked by loading a fake Bargo result with a hostile member name (HTML and script tags): it showed as plain text and nothing ran.</li>
+        <li><strong>Content-Security-Policy (fixed):</strong> both pages now carry a policy that runs only our own scripts and PostHog's, blocks inline scripts, and lets the app talk only to Polymarket, OpenRouter, Bargo, and PostHog. All JavaScript moved out of the pages into files for this. GitHub Pages can't send security headers, so the policy is a meta tag.</li>
+        <li><strong>Secrets:</strong> no keys in the code or in any of the repo's past commits; <code>.env</code> is ignored by Git and was never committed. The optional Bargo key lives only in a GitHub secret and is never logged or sent to the page. The PostHog <code>phc_</code> token in the page is public by design. Removed an unused key placeholder from <code>.env.example</code>.</li>
+        <li><strong>Analytics privacy (fixed):</strong> session replays now explicitly mask everything typed into inputs. Member searches still make shareable links (<code>?member=…</code>), but that part of the address is now removed from every PostHog event and replay before it leaves the browser, so PostHog never stores what people searched for.</li>
+        <li><strong>Member search input (fixed):</strong> 2–60 characters, letters plus spaces, periods, apostrophes, and hyphens only, checked before any request. Shared links get the same check, so a bad link never calls Bargo.</li>
+        <li><strong>GitHub Actions (fixed):</strong> the daily data job pins its actions to exact commits instead of movable version tags, and only that job gets write access (to commit the updated data). The repo's default token is read-only.</li>
+        <li><strong>Known limits:</strong> GitHub Pages can't set headers, so clickjacking protection (<code>frame-ancestors</code>) isn't possible. The policy allows inline styles, which the chart bars use for their widths.</li>
+      </ul>
     </section>
 
     <!-- WEEKLY BUILD LOG (Updated at least twice a week via Git commits) -->
