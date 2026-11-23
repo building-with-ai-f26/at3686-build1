@@ -10,8 +10,9 @@
 
 ## 2. Project Structure
 ```
-docs/app/index.html The app page: layout, dark theme, PostHog snippet, and the glue
-                    script (range tabs, refresh, cards, data table).
+docs/app/index.html The app page: layout, dark theme, and Content-Security-Policy.
+docs/app/main.js    The app's glue script (range tabs, refresh, cards, data table).
+docs/posthog.js     PostHog snippet and settings, shared by both pages.
 docs/app/signals.js Today's signals and the scoring formula (one comment block).
                     Shared by the live score and the history.
 docs/app/history.js Daily Burst Index history since 2026-10-23, the main chart
@@ -32,7 +33,8 @@ tests/README.md     Verification guidance (Build 4).
 - **Signals:** Polymarket Gamma API (`gamma-api.polymarket.com/markets?slug=…`), Polymarket price history (`clob.polymarket.com/prices-history`), and OpenRouter (`openrouter.ai/api/v1/models`), all public with no keys. The manual signal is `MANUAL_SIGNAL` at the top of `docs/app/signals.js`; add each new quarter's figure at the top of its `values` list.
 - **Congress trades (Bargo):** **never commit raw trade records.** Bargo's terms forbid republishing them (files, feeds, or serving them from our site); only aggregates that can't be used to reconstruct records are allowed, plus live results fetched by the visitor's browser. Bargo attribution must stay visible without scrolling (top bar) and next to the panel. The optional key is the GitHub secret `BARGO_API_KEY` (locally: `.env`); never put it in the page. Without a key, Bargo allows 30 requests and 100 rows per IP per day, and returns an *empty* list (not an error) when the row quota runs out. Member search asks for 10 rows per search (about 10 searches a day per network address, shared on the same Wi-Fi). The summary counts every record Bargo returns (no extra de-duplication: identical-looking records are usually separate trades, e.g. self vs. spouse accounts). **Bargo's `page` parameter starts at 0** (`page=1` is the second page), which its docs don't say. Don't show Bargo's `perf_pct`/`outcome` fields (estimates; see PRD non-goal #4). The panel is not part of the Burst Index.
 - **History:** each past day is recalculated with today's formula. A past day only counts if it has the same signals as today, so a failed source never creates a fake jump.
-- **Analytics:** PostHog (US Cloud) is on both pages. Custom events: `signals_refreshed` (with `froth_score`, `signals_loaded`), `signal_card_opened` (with `signal`), and `chart_range_changed` (with `range`). The `phc_` project token is a public client-side key that PostHog designs to live in browser code, so it is the one exception to rule 5 below. Never commit a `phx_` personal API key.
+- **Security:** both pages have a Content-Security-Policy `<meta>` tag. **No inline scripts or `onclick` handlers** (the policy blocks them): put JavaScript in `.js` files and custom click events on `data-ph-event="name"`. A new API host must be added to the app's `connect-src`, or the browser blocks it. Escape every third-party string with `escapeHtml` before using `innerHTML` (or use `textContent`). Member search input is checked by `checkQuery` in `congress.js`. Workflow actions are pinned to commit SHAs with the version in a comment.
+- **Analytics:** PostHog (US Cloud) is on both pages via the shared `docs/posthog.js` (snippet, input masking in replays, and a `before_send` hook that strips `?member=` from event and replay URLs). Custom events: `signals_refreshed` (with `froth_score`, `signals_loaded`), `signal_card_opened` (with `signal`), and `chart_range_changed` (with `range`). The `phc_` project token is a public client-side key that PostHog designs to live in browser code, so it is the one exception to rule 5 below. Never commit a `phx_` personal API key.
 
 ## 3. Commands
 - **Setup / install dependencies:** None. You need Python 3 (preinstalled on macOS), a browser, and an internet connection.

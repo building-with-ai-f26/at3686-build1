@@ -9,8 +9,8 @@ on:
     - cron: "17 13 * * *" # daily, 13:17 UTC (8:17 AM New York in winter)
   workflow_dispatch: # "Run workflow" button on the Actions tab
 
-permissions:
-  contents: write # needed to commit the updated JSON
+# No permissions by default; the one job below asks only for what it needs.
+permissions: {}
 
 concurrency:
   group: congress-trades
@@ -19,10 +19,14 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # needed to commit the updated JSON; nothing else
     steps:
-      - uses: actions/checkout@v7
+      # Actions are pinned to exact commits (a tag can be moved; a commit can't).
+      # To update: look up the new release's commit on GitHub and change both parts.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: actions/setup-node@v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
 

@@ -16,6 +16,20 @@ const PARTY_PLURAL = { Democrat: "Democrats", Republican: "Republicans", Indepen
 const CHAMBER = { house: "House", senate: "Senate" };
 const DAY_MS = 86400000;
 
+// Member search input: 2–60 characters of letters (accents allowed), spaces,
+// and . ' ’ - (e.g. "O'Rourke", "Wasserman Schultz"). Checked before any
+// request, for both the search box and shared ?member= links.
+export const QUERY_MAX = 60;
+const NAME_PATTERN = /^[\p{L}][\p{L} .'’-]*$/u;
+
+export function checkQuery(raw) {
+  const query = String(raw ?? "").trim().replace(/\s+/g, " ");
+  if (query.length < 2) return { error: "Type at least 2 letters of a member's name." };
+  if (query.length > QUERY_MAX) return { error: `Use ${QUERY_MAX} characters or fewer: a last name is enough.` };
+  if (!NAME_PATTERN.test(query)) return { error: "Use letters only (spaces, periods, apostrophes, and hyphens are fine)." };
+  return { query };
+}
+
 let partyLookup = { house: {}, senate: {} };
 
 const usd = (n) => `$${Math.round(n).toLocaleString("en-US")}`;
@@ -195,17 +209,22 @@ export async function initCongressPanel() {
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const query = input.value.trim();
-    if (query.length < 2) {
-      resultsEl.innerHTML = searchMessage("Type at least 2 letters of a member's name.");
+    const { query, error } = checkQuery(input.value);
+    if (error) {
+      resultsEl.innerHTML = searchMessage(error);
       return;
     }
+    input.value = query;
     run(query);
   });
 
+  // A shared link (?member=...) only runs a search if it passes the same check.
   const shared = new URL(window.location.href).searchParams.get("member");
-  if (shared && shared.trim().length >= 2) {
-    input.value = shared.trim();
-    run(shared.trim());
+  if (shared) {
+    const { query } = checkQuery(shared);
+    if (query) {
+      input.value = query;
+      run(query);
+    }
   }
 }
