@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T20:20:59.153Z",
+  "generated_at": "2026-11-25T22:30:22.999Z",
   "source": {
     "name": "Bargo",
     "url": "https://www.bargo.ai/free-apis/congress",
@@ -17,21 +17,21 @@
     "PLTR"
   ],
   "window": {
-    "first_transaction": "2026-08-24",
+    "first_transaction": "2026-08-26",
     "last_transaction": "2026-11-05",
-    "last_disclosure": "2026-11-19"
+    "last_disclosure": "2026-11-23"
   },
   "totals": {
-    "trades": 42,
+    "trades": 46,
     "buys": 20,
-    "sells": 22,
+    "sells": 26,
     "exchanges": 0,
     "unmatched_party": 0
   },
   "disclosure_lag_days": {
-    "median": 15.5,
-    "max": 44,
-    "over_45": 0
+    "median": 16.5,
+    "max": 68,
+    "over_45": 1
   },
   "by_group": [
     {
@@ -49,11 +49,11 @@
       "chamber": "house",
       "party": "Republican",
       "buys": 11,
-      "sells": 17,
+      "sells": 21,
       "buy_amount_low": 11011,
       "buy_amount_high": 165000,
-      "sell_amount_low": 519017,
-      "sell_amount_high": 1285000,
+      "sell_amount_low": 474021,
+      "sell_amount_high": 1260000,
       "open_ended": 0
     },
     {
@@ -83,45 +83,45 @@
     {
       "ticker": "MSFT",
       "buys": 4,
-      "sells": 8,
+      "sells": 9,
       "buy_amount_low": 4004,
       "buy_amount_high": 60000,
-      "sell_amount_low": 285008,
-      "sell_amount_high": 675000,
+      "sell_amount_low": 286009,
+      "sell_amount_high": 690000,
       "open_ended": 0
     },
     {
       "ticker": "NVDA",
       "buys": 5,
-      "sells": 5,
+      "sells": 6,
       "buy_amount_low": 5005,
       "buy_amount_high": 75000,
-      "sell_amount_low": 19005,
-      "sell_amount_high": 110000,
+      "sell_amount_low": 20006,
+      "sell_amount_high": 125000,
       "open_ended": 0
     },
     {
       "ticker": "GOOG",
       "buys": 3,
-      "sells": 4,
+      "sells": 5,
       "buy_amount_low": 3003,
       "buy_amount_high": 45000,
-      "sell_amount_low": 166004,
-      "sell_amount_high": 415000,
-      "open_ended": 0
-    },
-    {
-      "ticker": "META",
-      "buys": 3,
-      "sells": 2,
-      "buy_amount_low": 3003,
-      "buy_amount_high": 45000,
-      "sell_amount_low": 2002,
-      "sell_amount_high": 30000,
+      "sell_amount_low": 167005,
+      "sell_amount_high": 430000,
       "open_ended": 0
     },
     {
       "ticker": "AVGO",
+      "buys": 3,
+      "sells": 3,
+      "buy_amount_low": 3003,
+      "buy_amount_high": 45000,
+      "sell_amount_low": 3003,
+      "sell_amount_high": 45000,
+      "open_ended": 0
+    },
+    {
+      "ticker": "META",
       "buys": 3,
       "sells": 2,
       "buy_amount_low": 3003,
@@ -141,13 +141,13 @@
       "open_ended": 0
     },
     {
-      "ticker": "GOOGL",
+      "ticker": "AMD",
       "buys": 0,
       "sells": 1,
       "buy_amount_low": 0,
       "buy_amount_high": 0,
-      "sell_amount_low": 50001,
-      "sell_amount_high": 100000,
+      "sell_amount_low": 1001,
+      "sell_amount_high": 15000,
       "open_ended": 0
     }
   ]
