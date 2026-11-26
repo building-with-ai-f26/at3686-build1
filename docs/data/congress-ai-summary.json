@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T22:30:22.999Z",
+  "generated_at": "2026-11-26T22:20:45.954Z",
   "source": {
     "name": "Bargo",
     "url": "https://www.bargo.ai/free-apis/congress",
@@ -19,17 +19,17 @@
   "window": {
     "first_transaction": "2026-08-26",
     "last_transaction": "2026-11-05",
-    "last_disclosure": "2026-11-23"
+    "last_disclosure": "2026-11-24"
   },
   "totals": {
-    "trades": 46,
+    "trades": 47,
     "buys": 20,
-    "sells": 26,
+    "sells": 27,
     "exchanges": 0,
     "unmatched_party": 0
   },
   "disclosure_lag_days": {
-    "median": 16.5,
+    "median": 17,
     "max": 68,
     "over_45": 1
   },
@@ -49,11 +49,11 @@
       "chamber": "house",
       "party": "Republican",
       "buys": 11,
-      "sells": 21,
+      "sells": 22,
       "buy_amount_low": 11011,
       "buy_amount_high": 165000,
-      "sell_amount_low": 474021,
-      "sell_amount_high": 1260000,
+      "sell_amount_low": 475022,
+      "sell_amount_high": 1275000,
       "open_ended": 0
     },
     {
@@ -93,11 +93,11 @@
     {
       "ticker": "NVDA",
       "buys": 5,
-      "sells": 6,
+      "sells": 7,
       "buy_amount_low": 5005,
       "buy_amount_high": 75000,
-      "sell_amount_low": 20006,
-      "sell_amount_high": 125000,
+      "sell_amount_low": 21007,
+      "sell_amount_high": 140000,
       "open_ended": 0
     },
     {
