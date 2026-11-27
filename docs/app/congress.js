@@ -5,7 +5,7 @@
 //   per Bargo's terms).
 // - Member search calls Bargo live from the visitor's own browser (no key, so
 //   each visitor has Bargo's free per-day limit). Results are shown, never stored.
-import { AI_TICKERS, AMOUNT_FILTERS, BARGO_API, partyFor, partyBucket } from "./congress-common.js";
+import { AI_TICKERS, AMOUNT_FILTERS, BARGO_API, normalizeName, partyFor, partyBucket } from "./congress-common.js";
 import { escapeHtml } from "./signals.js";
 
 // Rows per search. Without a key, Bargo allows 100 rows per network address per
@@ -195,8 +195,65 @@ function showResults(resultsEl) {
       Number.isFinite(callsLeft) ? ` Free lookups left today: ${callsLeft}.` : ""}</p>`;
 }
 
-async function search(query, resultsEl) {
+// --- Spelling help -----------------------------------------------------------
+// ../data/members.json lists current members of Congress (public-domain
+// congress-legislators data, written by the daily script). A query that matches
+// nobody gets "Did you mean…?" suggestions BEFORE calling Bargo, so typos don't
+// use up a free lookup.
+let members = [];
+
+function prepareMembers(list) {
+  return list.map((m) => ({ ...m, tokens: normalizeName([m.name, m.first, m.nickname, m.last].filter(Boolean).join(" ")), lastKey: normalizeName(m.last).join(" ") }));
+}
+
+// Every word typed must start a word of the member's name ("cruz", "ted cru").
+function findMembers(query) {
+  const words = normalizeName(query);
+  return words.length ? members.filter((m) => words.every((w) => m.tokens.some((t) => t.startsWith(w)))) : [];
+}
+
+function editDistance(a, b) {
+  const row = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    let prev = row[0];
+    row[0] = i;
+    for (let j = 1; j <= b.length; j++) {
+      const temp = row[j];
+      row[j] = Math.min(row[j] + 1, row[j - 1] + 1, prev + (a[i - 1] === b[j - 1] ? 0 : 1));
+      prev = temp;
+    }
+  }
+  return row[b.length];
+}
+
+// Closest last names to the last word typed (up to 1 typo per 3 letters).
+function suggestMembers(query) {
+  const words = normalizeName(query);
+  const word = words[words.length - 1] || "";
+  if (word.length < 3) return [];
+  const limit = Math.max(1, Math.floor(word.length / 3));
+  return members
+    .map((m) => ({ m, d: Math.min(editDistance(word, m.lastKey), ...m.tokens.map((t) => editDistance(word, t))) }))
+    .filter((x) => x.d <= limit)
+    .sort((a, b) => a.d - b.d || (a.m.chamber === "senate" ? -1 : 1) - (b.m.chamber === "senate" ? -1 : 1) || a.m.name.localeCompare(b.m.name))
+    .slice(0, 4)
+    .map((x) => x.m);
+}
+
+const memberLabel = (m) => `${m.chamber === "senate" ? "Sen." : "Rep."} ${m.name} (${(m.party || "?").charAt(0)}-${m.state})`;
+
+async function search(query, resultsEl, { skipCheck = false } = {}) {
   lastResults = null;
+  const known = members.length ? findMembers(query) : [];
+  if (members.length && !skipCheck && known.length === 0) {
+    const suggestions = suggestMembers(query);
+    if (suggestions.length) {
+      resultsEl.innerHTML = `<div class="cg-suggest"><p class="meta">No current member of Congress matches "${escapeHtml(query)}". Did you mean:</p>
+        <div class="cg-suggest-list">${suggestions.map((m) => `<button type="button" class="refresh" data-search="${escapeHtml(m.last)}">${escapeHtml(memberLabel(m))}</button>`).join("")}</div>
+        <p class="meta"><button type="button" class="link-button" data-anyway="${escapeHtml(query)}">Search Bargo for "${escapeHtml(query)}" anyway</button> (for example, a former member)</p></div>`;
+      return { members: 0, ai: 0, other: 0, suggestions: suggestions.length };
+    }
+  }
   resultsEl.innerHTML = searchMessage("Searching Bargo…");
   let response;
   try {
@@ -217,10 +274,13 @@ async function search(query, resultsEl) {
   }
   const { trades = [] } = await response.json();
   if (trades.length === 0) {
+    const names = known.slice(0, 3).map(memberLabel).join(", ") + (known.length > 3 ? `, and ${known.length - 3} more` : "");
     resultsEl.innerHTML = searchMessage(
       Number.isFinite(rowsLeft) && rowsLeft < SEARCH_LIMIT
         ? "You've used today's free member lookups from Bargo. Try again tomorrow."
-        : `No disclosed trades in the last 3 months for members matching "${query}".`
+        : known.length
+          ? `Found ${names} in Congress, but Bargo has no disclosed trades for "${query}" in the last 3 months. Many members, especially senators, rarely trade.`
+          : `No disclosed trades in the last 3 months for members matching "${query}". Check the spelling; a last name works best.`
     );
     return { members: 0, ai: 0, other: 0 };
   }
@@ -238,11 +298,13 @@ export async function initCongressPanel() {
   const input = document.getElementById("cg-query");
   const resultsEl = document.getElementById("cg-results");
 
-  const [summaryResult, lookupResult] = await Promise.allSettled([
+  const [summaryResult, lookupResult, membersResult] = await Promise.allSettled([
     loadJson("../data/congress-ai-summary.json"),
     loadJson("../data/party-lookup.json"),
+    loadJson("../data/members.json"),
   ]);
   if (lookupResult.status === "fulfilled") partyLookup = lookupResult.value;
+  if (membersResult.status === "fulfilled" && Array.isArray(membersResult.value.members)) members = prepareMembers(membersResult.value.members);
   if (summaryResult.status === "fulfilled" && summaryResult.value.by_group?.length) {
     const summary = summaryResult.value;
     const filterEl = document.getElementById("cg-filter");
@@ -271,17 +333,26 @@ export async function initCongressPanel() {
     summaryEl.innerHTML = searchMessage("The buys/sells summary isn't available yet. It updates once a day. Member search below works now.");
   }
 
-  const run = async (query) => {
+  const run = async (query, options) => {
     const button = form.querySelector("button");
     button.disabled = true;
-    const outcome = await search(query, resultsEl);
+    const outcome = await search(query, resultsEl, options);
     button.disabled = false;
     // Shareable link: the search lives in the address bar (?member=...).
     const url = new URL(window.location.href);
     url.searchParams.set("member", query);
     history.replaceState(null, "", url);
-    if (outcome) window.posthog?.capture("congress_search", { members_matched: outcome.members, ai_trades: outcome.ai, other_trades: outcome.other });
+    if (outcome) window.posthog?.capture("congress_search", { members_matched: outcome.members, ai_trades: outcome.ai, other_trades: outcome.other, suggestions_shown: outcome.suggestions || 0 });
   };
+
+  // "Did you mean" buttons search that member's last name; "anyway" skips the check.
+  resultsEl.addEventListener("click", (event) => {
+    const pick = event.target.closest("button[data-search], button[data-anyway]");
+    if (!pick) return;
+    const anyway = pick.hasAttribute("data-anyway");
+    input.value = anyway ? pick.dataset.anyway : pick.dataset.search;
+    run(input.value, { skipCheck: anyway });
+  });
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();

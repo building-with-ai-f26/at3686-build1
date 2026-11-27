@@ -2,7 +2,7 @@
 // Loaded by docs/app/index.html as a module (moved out of the page so the
 // Content-Security-Policy can forbid inline scripts).
 import {
-  SIGNALS, MANUAL_SIGNAL, bandFor, indexScore, escapeHtml,
+  SIGNALS, MANUAL_SIGNAL, bandFor, indexScore, escapeHtml, signalLevel,
   fetchPolymarketMarkets, polymarketSubScore,
   fetchOpenRouterModels, openRouterTrendAt,
   manualAt, manualSubScore,
@@ -138,7 +138,7 @@ function cardContent(id) {
     return {
       headline: `Average "Yes" chance: ${(live.polymarket.avgYes * 100).toFixed(1)}%`,
       body: `<ul>${live.markets.map((m) => `<li><a href="${m.url}" target="_blank" rel="noopener">${escapeHtml(m.question)}</a>: ${(m.yes * 100).toFixed(1)}%${m.endDate ? ` <span class="meta">(ends ${formatDate(m.endDate.slice(0, 10), true)})</span>` : ""}</li>`).join("")}</ul>
-        <p class="meta">${live.markets.length} of 3 markets loaded. Calm = 5%, Frothy = 50%.</p>`,
+        <p class="meta">How it's scored: average odds of 5% or less → 0 (no bubble signs); 50% or more → 100 (strong bubble signs); in between scales evenly. ${live.markets.length} of 3 markets loaded.</p>`,
     };
   }
   if (id === "openrouter" && live.openrouter) {
@@ -153,7 +153,7 @@ function cardContent(id) {
           <li>Released in the last 6 months: median $${t.recentMedian.toFixed(2)} per million input tokens (${t.recentCount} paid models)</li>
           <li>Released 6–18 months ago: median $${t.priorMedian.toFixed(2)} (${t.priorCount} paid models)</li>
         </ul>
-        <p class="meta">Ratio ${t.ratio.toFixed(2)}. Calm = 1.2 (prices up 20%), Frothy = 0.6 (prices down 40%).</p>
+        <p class="meta">How it's scored: new models 20% pricier or more → 0 (no bubble signs); 40% cheaper or more → 100 (strong bubble signs); in between scales evenly.</p>
         <p class="note">Falling prices can also reflect efficiency gains, so this signal is directional, not definitive.</p>`,
     };
   }
@@ -162,7 +162,7 @@ function cardContent(id) {
     return {
       headline: `<strong class="signal-figure">${m.value}%</strong> of global VC funding went to AI · ${escapeHtml(MANUAL_SIGNAL.source)}, ${escapeHtml(m.quarter)}`,
       body: `<ul>${MANUAL_SIGNAL.values.map((v) => `<li>${escapeHtml(v.quarter)}: ${v.approx ? "~" : ""}${v.value}%${v === m ? " (current)" : ""}</li>`).join("")}</ul>
-        <p class="meta">Source: ${escapeHtml(MANUAL_SIGNAL.source)}, ${escapeHtml(m.quarter)}. Calm = 20%, Frothy = 80%. Entered by hand; update MANUAL_SIGNAL in docs/app/signals.js each quarter.</p>`,
+        <p class="meta">How it's scored: 20% or less → 0 (no bubble signs); 80% or more → 100 (strong bubble signs); in between scales evenly. Source: ${escapeHtml(MANUAL_SIGNAL.source)}, ${escapeHtml(m.quarter)}, entered by hand each quarter.</p>`,
     };
   }
   return null;
@@ -176,7 +176,7 @@ function renderCards(rows) {
     const name = `<span class="signal-name">${escapeHtml(s.name)}</span><br><span class="signal-measures">${escapeHtml(s.measures)}</span>`;
     card.innerHTML = content
       ? `<summary><span class="signal-text">${name}<br><span class="meta">${content.headline}</span></span>
-          ${sparkline(rows, s.id)}<span class="signal-score">${fmtSub(today[s.id])}</span></summary>
+          ${sparkline(rows, s.id)}<span class="signal-score"><span>${fmtSub(today[s.id])}<span class="signal-unit">/100</span></span><span class="signal-level">${signalLevel(today[s.id])}</span></span></summary>
          <div class="signal-body">${content.body}</div>`
       : `<summary><span class="signal-text">${name}<br><span class="meta">Unavailable</span></span><span class="signal-score">–</span></summary>
          <div class="signal-body"><p class="meta">Could not load this signal (${escapeHtml(state.live.errors[s.id] || "unknown error")}). It is left out of the index.</p></div>`;
