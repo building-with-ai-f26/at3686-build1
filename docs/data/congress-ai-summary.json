@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T03:22:46.516Z",
+  "generated_at": "2026-11-27T03:23:59.409Z",
   "source": {
     "name": "Bargo",
     "url": "https://www.bargo.ai/free-apis/congress",
@@ -165,44 +165,7 @@
           "chamber": "house",
           "party": "Republican",
           "buys": 0,
-          "sells": 7,
-          "buy_amount_low": 0,
-          "buy_amount_high": 0,
-          "sell_amount_low": 460007,
-          "sell_amount_high": 1050000,
-          "open_ended": 0
-        }
-      ],
-      "by_ticker": [
-        {
-          "ticker": "MSFT",
-          "buys": 0,
-          "sells": 3,
-          "buy_amount_low": 0,
-          "buy_amount_high": 0,
-          "sell_amount_low": 280003,
-          "sell_amount_high": 600000,
-          "open_ended": 0
-        },
-        {
-          "ticker": "GOOG",
-          "buys": 0,
-          "sells": 3,
-          "buy_amount_low": 0,
-          "buy_amount_high": 0,
-          "sell_amount_low": 165003,
-          "sell_amount_high": 400000,
-          "open_ended": 0
-        },
-        {
-          "ticker": "NVDA",
-          "buys": 0,
-          "sells": 1,
-          "buy_amount_low": 0,
-          "buy_amount_high": 0,
-          "sell_amount_low": 15001,
-          "sell_amount_high": 50000,
-          "open_ended": 0
+          "sells": 7
         }
       ]
     },
@@ -219,34 +182,7 @@
           "chamber": "house",
           "party": "Republican",
           "buys": 0,
-          "sells": 3,
-          "buy_amount_low": 0,
-          "buy_amount_high": 0,
-          "sell_amount_low": 400003,
-          "sell_amount_high": 850000,
-          "open_ended": 0
-        }
-      ],
-      "by_ticker": [
-        {
-          "ticker": "GOOG",
-          "buys": 0,
-          "sells": 2,
-          "buy_amount_low": 0,
-          "buy_amount_high": 0,
-          "sell_amount_low": 150002,
-          "sell_amount_high": 350000,
-          "open_ended": 0
-        },
-        {
-          "ticker": "MSFT",
-          "buys": 0,
-          "sells": 1,
-          "buy_amount_low": 0,
-          "buy_amount_high": 0,
-          "sell_amount_low": 250001,
-          "sell_amount_high": 500000,
-          "open_ended": 0
+          "sells": 3
         }
       ]
     },
@@ -263,24 +199,7 @@
           "chamber": "house",
           "party": "Republican",
           "buys": 0,
-          "sells": 1,
-          "buy_amount_low": 0,
-          "buy_amount_high": 0,
-          "sell_amount_low": 250001,
-          "sell_amount_high": 500000,
-          "open_ended": 0
-        }
-      ],
-      "by_ticker": [
-        {
-          "ticker": "MSFT",
-          "buys": 0,
-          "sells": 1,
-          "buy_amount_low": 0,
-          "buy_amount_high": 0,
-          "sell_amount_low": 250001,
-          "sell_amount_high": 500000,
-          "open_ended": 0
+          "sells": 1
         }
       ]
     }
