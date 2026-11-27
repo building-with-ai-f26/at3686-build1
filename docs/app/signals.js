@@ -14,9 +14,11 @@
  *   1. Polymarket hype odds: average "Yes" chance across three AI-hype
  *      markets. Calm = 5%, Frothy = 50%.
  *   2. OpenRouter price trend: median input price of paid models released
- *      in the 90 days before a date ÷ median for models released 90–365 days
- *      before it. Falling prices count as froth (labs pricing below cost to
- *      grab share). Calm = 1.2 (prices up 20%), Frothy = 0.6 (prices down 40%).
+ *      in the 180 days before a date ÷ median for models released in the year
+ *      before that (180–545 days). ":batch" variants are left out: they are
+ *      discounted copies of models already listed, so they skewed the median.
+ *      Falling prices count as froth (labs pricing below cost to grab share).
+ *      Calm = 1.2 (prices up 20%), Frothy = 0.6 (prices down 40%).
  *   3. Manual signal: AI's share of global VC funding, entered by hand each
  *      quarter from Crunchbase. Calm = 20%, Frothy = 80%.
  *
@@ -46,10 +48,15 @@ export const POLYMARKET_MARKETS = [
   { slug: "openai-announces-it-has-achieved-agi-before-2027", event: "openai-announces-it-has-achieved-agi-before-2027" },
 ];
 
+// `measures`: one line on the card face saying what the signal is and which
+// way pushes froth up.
 export const SIGNALS = [
-  { id: "polymarket", name: "Polymarket AI-hype odds" },
-  { id: "openrouter", name: "OpenRouter model price trend" },
-  { id: "manual", name: MANUAL_SIGNAL.label },
+  { id: "polymarket", name: "Polymarket AI-hype odds",
+    measures: "Betting odds on extreme AI outcomes (a $2.5T Anthropic, a $2T OpenAI IPO, AGI before 2027). Higher odds → more froth." },
+  { id: "openrouter", name: "OpenRouter model price trend",
+    measures: "Are new AI models launching cheaper than last year's? Cheaper launches → more froth." },
+  { id: "manual", name: MANUAL_SIGNAL.label,
+    measures: "How much of all venture money goes to AI. Bigger share → more froth." },
 ];
 
 export const BOUNDS = {
@@ -58,12 +65,13 @@ export const BOUNDS = {
   manual: { calm: 20, frothy: 80 },
 };
 
+// `meaning`: the plain-English headline shown above the score.
 export const BANDS = [
-  { max: 20, name: "Fearful" },
-  { max: 40, name: "Cautious" },
-  { max: 60, name: "Neutral" },
-  { max: 80, name: "Hot" },
-  { max: 100, name: "Frothy" },
+  { max: 20, name: "Fearful", meaning: "AI hype is running well below fundamentals." },
+  { max: 40, name: "Cautious", meaning: "AI hype is cooler than usual." },
+  { max: 60, name: "Neutral", meaning: "AI hype is roughly in line with fundamentals." },
+  { max: 80, name: "Hot", meaning: "AI hype is running above fundamentals." },
+  { max: 100, name: "Frothy", meaning: "AI hype is far above fundamentals: classic bubble territory." },
 ];
 
 const DAY_SECONDS = 86400;
@@ -140,17 +148,22 @@ export async function fetchOpenRouterModels() {
 }
 
 // Price trend as of a moment in time (seconds). Prices are USD per token;
-// free and special models (price ≤ 0) are skipped. Uses today's listed prices,
-// so past days are an approximation (old prices and removed models are unknown).
+// free and special models (price ≤ 0) and ":batch" variants are skipped. Uses
+// today's listed prices, so past days are an approximation (old prices and
+// removed models are unknown).
+export const OPENROUTER_WINDOW = { recentDays: 180, priorDays: 365 };
+export const isBatchVariant = (model) => /:batch$/i.test(model.id || "");
+
 export function openRouterTrendAt(models, atSeconds) {
   const recent = [];
   const prior = [];
   for (const model of models) {
     const pricePerMillion = Number(model.pricing?.prompt) * 1e6;
-    if (!(pricePerMillion > 0) || !model.created || model.created > atSeconds) continue;
+    if (!(pricePerMillion > 0) || !model.created || model.created > atSeconds || isBatchVariant(model)) continue;
     const ageDays = (atSeconds - model.created) / DAY_SECONDS;
-    if (ageDays < 90) recent.push(pricePerMillion);
-    else if (ageDays < 365) prior.push(pricePerMillion);
+    const { recentDays, priorDays } = OPENROUTER_WINDOW;
+    if (ageDays < recentDays) recent.push(pricePerMillion);
+    else if (ageDays < recentDays + priorDays) prior.push(pricePerMillion);
   }
   if (recent.length < 5 || prior.length < 5) return null;
   const recentMedian = median(recent);

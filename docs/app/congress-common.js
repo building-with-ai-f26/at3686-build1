@@ -6,6 +6,14 @@ export const AI_TICKERS = ["NVDA", "MSFT", "GOOGL", "GOOG", "META", "AMD", "AVGO
 
 export const BARGO_API = "https://www.bargo.ai/free-apis/congress/v1";
 
+// Trade-size filter. Members disclose a range (e.g. $15,001–$50,000), so a trade
+// counts as "$15K+" when the LOW end of its range is at least $15,001.
+export const AMOUNT_FILTERS = [
+  { min: 15001, label: "$15K+" },
+  { min: 50001, label: "$50K+" },
+  { min: 250001, label: "$250K+" },
+];
+
 // Party matching. Bargo's data has no party field, so each trade is matched to
 // the public-domain congress-legislators dataset
 // (https://github.com/unitedstates/congress-legislators, CC0):

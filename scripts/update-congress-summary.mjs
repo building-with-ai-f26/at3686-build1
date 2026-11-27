@@ -7,7 +7,7 @@
 // ticker, plus disclosure-lag stats. No member names, dates, or single trades.
 // The app's member search calls Bargo live from the visitor's browser instead.
 import { readFile, writeFile, mkdir } from "node:fs/promises";
-import { AI_TICKERS, BARGO_API as API, buildPartyLookup, partyFor, partyBucket } from "../docs/app/congress-common.js";
+import { AI_TICKERS, AMOUNT_FILTERS, BARGO_API as API, buildPartyLookup, partyFor, partyBucket } from "../docs/app/congress-common.js";
 
 const LEGISLATORS = "https://unitedstates.github.io/congress-legislators/legislators-current.json";
 const OUT_DIR = new URL("../docs/data/", import.meta.url);
@@ -131,6 +131,25 @@ async function main() {
     by_group: Object.values(groups).sort((a, b) => a.chamber.localeCompare(b.chamber) || a.party.localeCompare(b.party)),
     by_ticker: Object.values(byTicker).sort((a, b) => b.buys + b.sells - (a.buys + a.sells)),
   };
+
+  // Trade-size filter: buy/sell COUNTS by chamber and party for trades whose
+  // disclosed range starts at or above each threshold (amounts are disclosed as
+  // ranges, so the low end decides). Large trades are rare, so these groups can
+  // be tiny: to keep any single record from being rebuilt (Bargo's terms), they
+  // carry no ticker breakdown and no amount totals, only counts.
+  summary.amount_filters = AMOUNT_FILTERS.map(({ min, label }) => {
+    const sized = trades.filter((t) => Number(t.amount_low) >= min);
+    const g = {};
+    for (const t of sized) {
+      const party = partyBucket(partyFor(t, lookup));
+      addTrade((g[`${t.chamber}|${party}`] ||= { chamber: t.chamber, party, ...emptyTally() }), t);
+    }
+    const groupsOut = Object.values(g)
+      .map(({ chamber, party, buys, sells }) => ({ chamber, party, buys, sells }))
+      .sort((a, b) => a.chamber.localeCompare(b.chamber) || a.party.localeCompare(b.party));
+    const sum = (key) => groupsOut.reduce((n, x) => n + x[key], 0);
+    return { min, label, totals: { trades: sized.length, buys: sum("buys"), sells: sum("sells") }, by_group: groupsOut };
+  });
 
   await mkdir(OUT_DIR, { recursive: true });
   await writeIfChanged("congress-ai-summary.json", summary, "generated_at");

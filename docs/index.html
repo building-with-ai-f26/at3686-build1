@@ -141,6 +141,8 @@
       font-size: 13px;
       color: var(--muted);
     }
+    .before-after figure { margin: 0; }
+    .before-after figcaption { font-size: 13px; font-weight: 600; color: var(--muted); }
     .screenshot {
       display: block;
       max-width: 100%;
@@ -161,6 +163,7 @@
       <div class="cta-row">
         <a class="btn" href="#live-demo" data-ph-event="clicked_try_product">See the Product →</a>
         <a class="btn btn-secondary" href="#prd">Read the Living PRD</a>
+        <a class="btn btn-secondary" href="#user-testing">User Testing</a>
         <a class="btn btn-secondary" href="#security">Security</a>
         <a class="btn btn-secondary" href="#build-log">Weekly Build Log</a>
       </div>
@@ -213,6 +216,11 @@
       <p><strong>Capitol Hill AI trades (context, not in the score):</strong> A daily GitHub Action fetches the last ~3 months of disclosed congressional trades in NVDA, MSFT, GOOGL/GOOG, META, AMD, AVGO, TSM, and PLTR from Bargo, matches party using the public-domain congress-legislators dataset, and saves <em>aggregates only</em> (buys vs. sells by chamber and party). Bargo's terms forbid republishing raw trade records, so member search runs live from the visitor's browser instead. The API key lives in a GitHub secret, never in the page.</p>
       <p><strong>Data & sign-in:</strong> No sign-in and no database, because the app stores no user data: scores are computed in the browser, the Congress summary is a static file, and member searches go straight from the visitor's browser to Bargo. If a crowd vote is added later, it will use Supabase with Row Level Security and server-side writes.</p>
       <p><strong>Cost per run:</strong> $0. Both data sources are free public endpoints that need no API keys.</p>
+      <p><strong>PRD v4 (Build 4): Build 5 roadmap from user testing</strong></p>
+      <ul>
+        <li><strong>Valuation signal (tester note #3):</strong> add the current price of AI as a fourth signal, such as the price-to-earnings ratio of an AI ETF or of the largest AI stocks, so the index reflects what investors are paying, not only hype odds and funding. Open question: a free daily source that needs no key.</li>
+        <li><strong>User sentiment (tester note #7):</strong> let visitors vote on how frothy AI feels and show the crowd's reading next to the Burst Index (kept separate from it at first). This would be the app's first stored user data, so it would use Supabase with Row Level Security and server-side writes (see Data & sign-in), plus limits against repeat voting.</li>
+      </ul>
 
       <h3>4. Unit Economics & Analytics Snapshot (Updated Weekly)</h3>
       <div class="grid-2">
@@ -233,6 +241,47 @@
           <div class="stat-value">TBD</div>
         </div>
       </div>
+    </section>
+
+    <!-- USER TESTING (Build 4, Track B) -->
+    <section id="user-testing">
+      <h2>User Testing (Build 4 · Track B)</h2>
+      <p class="meta">An outside tester used the live app (sessions recorded with PostHog session replay, with a visible notice). Their notes are below, lightly cleaned up for spelling, with what we did about each. Screenshots are from the live app before the fixes and the same views after.</p>
+      <ol>
+        <li>"Recommend who to watch." <span class="meta">Not built yet: there is no watchlist. Any future list would rank members by number of disclosed AI trades, never by performance (non-goal #4).</span></li>
+        <li>"Look into the OpenRouter layer." <span class="meta">→ Fix 2.</span></li>
+        <li>"Current price of AI (P/E ratio, or AI ETF)." <span class="meta">→ Build 5 roadmap (PRD v4).</span></li>
+        <li>"Dollar amount threshold in the Capitol Hill trading." <span class="meta">→ Fix 3.</span></li>
+        <li>"Percentage of AI in VC funding." <span class="meta">→ Fix 2.</span></li>
+        <li>"Headline about what the index means." <span class="meta">→ Fix 1.</span></li>
+        <li>"Have users add their sentiment." <span class="meta">→ Build 5 roadmap (PRD v4).</span></li>
+      </ol>
+
+      <h3>Fix 1 · Explain the score</h3>
+      <p>A plain-English headline now sits above the number and changes with the score band, for example: "<strong>47 / Neutral:</strong> AI hype is roughly in line with fundamentals. Higher = more bubble risk, not a crash date."</p>
+      <div class="grid-2 before-after">
+        <figure><figcaption>Before</figcaption><img class="screenshot" src="build4/before-overview-desktop.png" width="872" height="525" alt="Before: the Burst Index panel shows 26.4 and the word Cautious, with no sentence explaining what the score means." /></figure>
+        <figure><figcaption>After</figcaption><img class="screenshot" src="build4/after-overview-desktop.png" width="872" height="562" alt="After: above the number, a headline reads 47 / Neutral: AI hype is roughly in line with fundamentals. Higher = more bubble risk, not a crash date." /></figure>
+      </div>
+      <p class="meta">Phone (390 px): <a href="build4/before-overview-mobile.png">before</a> · <a href="build4/after-overview-mobile.png">after</a></p>
+
+      <h3>Fix 2 · Make each signal legible</h3>
+      <p>Every card now says what it measures and which way pushes froth up, and the AI share of VC funding (<strong>64%</strong>, Crunchbase Q3 2026) is on the card face. The OpenRouter signal was also fixed: 96 of its 477 models were ":batch" discount copies of models already listed, which skewed the median, so they are left out, and it now compares models released in the last 6 months with the year before (it was 90 days vs. the 9 months before). Its sub-score went from 0 to 61 and stopped swinging (it had dropped from 100 to 0 in one week). That moved the Burst Index from 26.4 (Cautious) to 46.6 (Neutral) on the same day's data; past days were recalculated the same way.</p>
+      <div class="grid-2 before-after">
+        <figure><figcaption>Before</figcaption><img class="screenshot" src="build4/before-signals-desktop.png" width="872" height="278" alt="Before: three signal cards showing only a title and one data line each; OpenRouter scores 0." /></figure>
+        <figure><figcaption>After</figcaption><img class="screenshot" src="build4/after-signals-desktop.png" width="872" height="373" alt="After: each card has a one-line explanation of what it measures and which way means more froth; OpenRouter scores 61; the VC card shows 64% in bold on its face." /></figure>
+      </div>
+      <p class="meta">Phone (390 px): <a href="build4/before-signals-mobile.png">before</a> · <a href="build4/after-signals-mobile.png">after</a></p>
+
+      <h3>Fix 3 · Capitol Hill trade-size filter</h3>
+      <p>New buttons (All sizes / $15K+ / $50K+ / $250K+) filter the buys-vs-sells chart and member search results. Members disclose a range (for example $15,001–$50,000), so a trade counts when the low end of its range meets the filter. Large trades are rare, so the filtered views show counts only (no tickers or amount totals), so a small group can't be traced back to a single trade. New PostHog event: <code>congress_amount_filter</code>.</p>
+      <div class="grid-2 before-after">
+        <figure><figcaption>Before</figcaption><img class="screenshot" src="build4/before-congress-desktop.png" width="872" height="600" alt="Before: the Capitol Hill panel with the buys and sells chart and no way to filter by trade size." /></figure>
+        <figure><figcaption>After</figcaption><img class="screenshot" src="build4/after-congress-desktop.png" width="872" height="671" alt="After: a Trade size row with All sizes, $15K+, $50K+, and $250K+ buttons and a note that amounts are disclosed as ranges, above the same chart." /></figure>
+      </div>
+      <p class="meta">Phone (390 px): <a href="build4/before-congress-mobile.png">before</a> · <a href="build4/after-congress-mobile.png">after</a></p>
+
+      <p><strong>Checks:</strong> desktop (1100 px) and phone (390 px) walkthroughs with no sideways scrolling; filter tested on the chart and on member search; PostHog receives <code>congress_amount_filter</code> with the chosen size.</p>
     </section>
 
     <!-- SECURITY -->

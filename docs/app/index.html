@@ -79,6 +79,8 @@
       padding: 20px;
       margin-bottom: 16px;
     }
+    .headline { margin: 0 0 14px; font-size: 16px; line-height: 1.45; color: var(--text-2); }
+    .headline strong { color: var(--text); }
     .hero-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
     .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
     .hero { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-top: 2px; }
@@ -141,6 +143,8 @@
     details.signal[open] summary::after { content: "▾"; }
     .signal-text { flex: 1; min-width: 0; }
     .signal-name { font-weight: 600; }
+    .signal-measures { display: inline-block; margin: 2px 0 4px; font-size: 13px; line-height: 1.4; color: var(--text-2); }
+    .signal-figure { font-size: 15px; color: var(--text); }
     .signal-score { font-size: 22px; font-weight: 600; min-width: 2.2em; text-align: right; }
     .spark path { fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-linejoin: round; }
     .spark circle { fill: var(--accent); stroke: var(--surface); stroke-width: 2; }
@@ -162,6 +166,10 @@
     .cg-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 16px; flex-wrap: wrap; }
     .cg-head h2 { margin: 0; font-size: 18px; }
     .cg-sub { margin: 4px 0 16px; }
+    .cg-filter { display: flex; align-items: center; gap: 4px 12px; flex-wrap: wrap; }
+    .cg-filter-label { font-size: 13px; color: var(--text-2); }
+    .cg-filter-buttons { flex-wrap: wrap; margin-bottom: 0; }
+    .cg-filter-note { margin: 6px 0 16px; }
     .cg-legend { display: flex; gap: 16px; font-size: 13px; color: var(--text-2); margin-bottom: 8px; }
     .cg-key { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
     .cg-key-buy { background: var(--buy); }
@@ -243,6 +251,7 @@
     </div>
 
     <section class="panel" id="overview" aria-live="polite">
+      <p class="headline" id="headline">Loading the Burst Index…</p>
       <div class="hero-row">
         <div>
           <div class="eyebrow">Burst Index</div>
@@ -278,6 +287,7 @@
         <div class="meta">Data via <a href="https://www.bargo.ai/free-apis/congress" target="_blank" rel="noopener">Bargo</a> · Not investment advice</div>
       </div>
       <p class="meta cg-sub">Disclosed stock trades by members of Congress in AI stocks over the last ~3 months, across all members. Context only: not part of the Burst Index.</p>
+      <div id="cg-filter" hidden></div>
       <div id="cg-summary"><p class="meta cg-message">Loading…</p></div>
 
       <form class="cg-search" id="cg-search" role="search">
