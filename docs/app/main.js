@@ -72,6 +72,12 @@ function renderHeadline(rows) {
     const band = bandFor(last.index);
     document.getElementById("band-name").textContent = band.name;
     document.getElementById("band-dot").style.background = `var(--band-${band.name.toLowerCase()})`;
+    // Plain-English headline: "52 / Hot: AI hype is running above fundamentals. ..."
+    const strong = document.createElement("strong");
+    strong.textContent = `${Math.round(last.index)} / ${band.name}:`;
+    document.getElementById("headline").replaceChildren(strong, ` ${band.meaning} Higher = more bubble risk, not a crash date.`);
+  } else {
+    document.getElementById("headline").textContent = "The Burst Index couldn't be calculated right now. Try Refresh signals.";
   }
   const delta = document.getElementById("delta");
   if (rows.length > 1 && Number.isFinite(first.index) && Number.isFinite(last.index)) {
@@ -140,11 +146,12 @@ function cardContent(id) {
     const change = (t.ratio - 1) * 100;
     return {
       headline: Math.abs(change) < 0.5
-        ? "New models launch at about the same price"
-        : `New models launch ${Math.abs(change).toFixed(0)}% ${change < 0 ? "cheaper" : "pricier"}`,
-      body: `<ul>
-          <li>Released in the last 90 days: median $${t.recentMedian.toFixed(2)} per million input tokens (${t.recentCount} paid models)</li>
-          <li>Released 90–365 days ago: median $${t.priorMedian.toFixed(2)} (${t.priorCount} paid models)</li>
+        ? "Last 6 months' models launched at about the same price as the year before"
+        : `Last 6 months' models launched ${Math.abs(change).toFixed(0)}% ${change < 0 ? "cheaper" : "pricier"} than the year before`,
+      body: `<p>Compares the median price of paid models released on OpenRouter in the last 6 months with those released in the year before; ":batch" discount copies of existing models are left out.</p>
+        <ul>
+          <li>Released in the last 6 months: median $${t.recentMedian.toFixed(2)} per million input tokens (${t.recentCount} paid models)</li>
+          <li>Released 6–18 months ago: median $${t.priorMedian.toFixed(2)} (${t.priorCount} paid models)</li>
         </ul>
         <p class="meta">Ratio ${t.ratio.toFixed(2)}. Calm = 1.2 (prices up 20%), Frothy = 0.6 (prices down 40%).</p>
         <p class="note">Falling prices can also reflect efficiency gains, so this signal is directional, not definitive.</p>`,
@@ -153,7 +160,7 @@ function cardContent(id) {
   if (id === "manual" && live.manual) {
     const m = live.manual;
     return {
-      headline: `${m.value}% of global VC funding · ${escapeHtml(MANUAL_SIGNAL.source)}, ${escapeHtml(m.quarter)}`,
+      headline: `<strong class="signal-figure">${m.value}%</strong> of global VC funding went to AI · ${escapeHtml(MANUAL_SIGNAL.source)}, ${escapeHtml(m.quarter)}`,
       body: `<ul>${MANUAL_SIGNAL.values.map((v) => `<li>${escapeHtml(v.quarter)}: ${v.approx ? "~" : ""}${v.value}%${v === m ? " (current)" : ""}</li>`).join("")}</ul>
         <p class="meta">Source: ${escapeHtml(MANUAL_SIGNAL.source)}, ${escapeHtml(m.quarter)}. Calm = 20%, Frothy = 80%. Entered by hand; update MANUAL_SIGNAL in docs/app/signals.js each quarter.</p>`,
     };
@@ -166,7 +173,7 @@ function renderCards(rows) {
   for (const s of SIGNALS) {
     const card = document.getElementById(`signal-${s.id}`);
     const content = cardContent(s.id);
-    const name = `<span class="signal-name">${escapeHtml(s.name)}</span>`;
+    const name = `<span class="signal-name">${escapeHtml(s.name)}</span><br><span class="signal-measures">${escapeHtml(s.measures)}</span>`;
     card.innerHTML = content
       ? `<summary><span class="signal-text">${name}<br><span class="meta">${content.headline}</span></span>
           ${sparkline(rows, s.id)}<span class="signal-score">${fmtSub(today[s.id])}</span></summary>

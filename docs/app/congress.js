@@ -5,7 +5,7 @@
 //   per Bargo's terms).
 // - Member search calls Bargo live from the visitor's own browser (no key, so
 //   each visitor has Bargo's free per-day limit). Results are shown, never stored.
-import { AI_TICKERS, BARGO_API, partyFor, partyBucket } from "./congress-common.js";
+import { AI_TICKERS, AMOUNT_FILTERS, BARGO_API, partyFor, partyBucket } from "./congress-common.js";
 import { escapeHtml } from "./signals.js";
 
 // Rows per search. Without a key, Bargo allows 100 rows per network address per
@@ -31,6 +31,34 @@ export function checkQuery(raw) {
 }
 
 let partyLookup = { house: {}, senate: {} };
+
+// --- Trade-size filter ----------------------------------------------------------
+// 0 = all sizes. Applies to the summary chart (precomputed counts in the summary
+// file) and to member search results (filtered in the browser).
+let minAmount = 0;
+let lastResults = null; // { trades, callsLeft } from the latest search, re-shown when the filter changes
+const SIZE_OPTIONS = [{ min: 0, label: "All sizes" }, ...AMOUNT_FILTERS];
+const sizeLabel = () => SIZE_OPTIONS.find((o) => o.min === minAmount)?.label || "All sizes";
+const fitsSize = (t) => !minAmount || Number(t.amount_low) >= minAmount;
+
+function renderFilter() {
+  return `<div class="cg-filter">
+      <span class="cg-filter-label">Trade size</span>
+      <div class="ranges cg-filter-buttons" role="group" aria-label="Filter by disclosed trade size">${SIZE_OPTIONS.map(
+        (o) => `<button type="button" data-min="${o.min}" aria-pressed="${o.min === minAmount}">${escapeHtml(o.label)}</button>`
+      ).join("")}</div>
+    </div>
+    <p class="meta cg-filter-note">Amounts are disclosed as ranges (for example $15,001–$50,000), so a trade counts when the low end of its range meets the filter.</p>`;
+}
+
+// The summary as seen through the filter: same shape, smaller counts.
+function viewFor(summary) {
+  const f = minAmount && summary.amount_filters?.find((x) => x.min === minAmount);
+  if (!f) return summary;
+  const unknown = f.by_group.filter((g) => g.party === "Unknown").reduce((n, g) => n + g.buys + g.sells, 0);
+  return { ...summary, by_group: f.by_group, by_ticker: f.by_ticker,
+    totals: { ...f.totals, exchanges: f.totals.trades - f.totals.buys - f.totals.sells, unmatched_party: unknown } };
+}
 
 const usd = (n) => `$${Math.round(n).toLocaleString("en-US")}`;
 const range = (low, high, openEnded) => (openEnded ? `${usd(low)}+` : `${usd(low)}–${usd(high)}`);
@@ -94,7 +122,7 @@ function renderNotes(summary) {
   const lag = summary.disclosure_lag_days;
   const allBuys = summary.by_group.reduce((s, g) => [s[0] + g.buy_amount_low, s[1] + g.buy_amount_high], [0, 0]);
   const allSells = summary.by_group.reduce((s, g) => [s[0] + g.sell_amount_low, s[1] + g.sell_amount_high], [0, 0]);
-  return `<p class="cg-totals"><strong>${t.trades}</strong> disclosed trades: <strong>${t.buys}</strong> buys, <strong>${t.sells}</strong> sells${t.exchanges ? `, ${t.exchanges} exchange${t.exchanges === 1 ? "" : "s"}` : ""}.
+  return `<p class="cg-totals">${minAmount ? `Trades of <strong>${escapeHtml(sizeLabel())}</strong>: ` : ""}<strong>${t.trades}</strong> disclosed trades: <strong>${t.buys}</strong> buys, <strong>${t.sells}</strong> sells${t.exchanges ? `, ${t.exchanges} exchange${t.exchanges === 1 ? "" : "s"}` : ""}.
       Disclosed amounts: buys ${usd(allBuys[0])}–${usd(allBuys[1])}, sells ${usd(allSells[0])}–${usd(allSells[1])}.</p>
     <ul class="cg-notes meta">
       <li><strong>Up to 45 days late by law.</strong> Members have up to 45 days to disclose a trade, so recent trades may not appear yet.${
@@ -127,7 +155,13 @@ function renderResults(trades) {
       return `<div class="cg-member"><div class="cg-member-name">${heading}</div>
         <p class="meta">No trades in the tracked AI stocks among the ${other} recent disclosures returned.</p></div>`;
     }
-    const rows = ai.map((t) => {
+    const shown = ai.filter(fitsSize);
+    const hidden = ai.length - shown.length;
+    if (shown.length === 0) {
+      return `<div class="cg-member"><div class="cg-member-name">${heading}</div>
+        <p class="meta">${ai.length} AI-stock trade${ai.length === 1 ? "" : "s"} found, none of ${escapeHtml(sizeLabel())}. Choose "All sizes" to see ${ai.length === 1 ? "it" : "them"}.</p></div>`;
+    }
+    const rows = shown.map((t) => {
       const side = t.type === "purchase" ? "Buy" : t.type === "sale" ? "Sell" : "Exchange";
       const lag = Math.round((Date.parse(t.disclosure_date) - Date.parse(t.transaction_date)) / DAY_MS);
       return `<tr><td>${escapeHtml(t.ticker)}</td><td><i class="cg-key cg-key-${side.toLowerCase()}"></i>${side}</td><td>${escapeHtml(t.amount_range || "")}</td>
@@ -135,12 +169,21 @@ function renderResults(trades) {
     }).join("");
     return `<div class="cg-member"><div class="cg-member-name">${heading}</div>
       <div class="table-scroll"><table><thead><tr><th>Ticker</th><th>Type</th><th>Amount (range)</th><th>Traded</th><th>Disclosed</th><th>Days late</th></tr></thead><tbody>${rows}</tbody></table></div>
+      ${hidden ? `<p class="meta">${hidden} smaller AI-stock trade${hidden === 1 ? "" : "s"} hidden by the ${escapeHtml(sizeLabel())} filter.</p>` : ""}
       ${other ? `<p class="meta">Plus ${other} trade${other === 1 ? "" : "s"} in other stocks (not shown).</p>` : ""}</div>`;
   });
   return blocks.join("");
 }
 
+function showResults(resultsEl) {
+  const { trades, callsLeft } = lastResults;
+  resultsEl.innerHTML = renderResults(trades) +
+    `<p class="meta">Live from Bargo: the ${SEARCH_LIMIT} most recent disclosed trades for matching members (free limit), last 3 months.${
+      Number.isFinite(callsLeft) ? ` Free lookups left today: ${callsLeft}.` : ""}</p>`;
+}
+
 async function search(query, resultsEl) {
+  lastResults = null;
   resultsEl.innerHTML = searchMessage("Searching Bargo…");
   let response;
   try {
@@ -168,9 +211,8 @@ async function search(query, resultsEl) {
     );
     return { members: 0, ai: 0, other: 0 };
   }
-  resultsEl.innerHTML = renderResults(trades) +
-    `<p class="meta">Live from Bargo: the ${SEARCH_LIMIT} most recent disclosed trades for matching members (free limit), last 3 months.${
-      Number.isFinite(callsLeft) ? ` Free lookups left today: ${callsLeft}.` : ""}</p>`;
+  lastResults = { trades, callsLeft };
+  showResults(resultsEl);
   const ai = trades.filter((t) => TRACKED.has(t.ticker)).length;
   return { members: new Set(trades.map((t) => t.member_slug)).size, ai, other: trades.length - ai };
 }
@@ -190,7 +232,28 @@ export async function initCongressPanel() {
   if (lookupResult.status === "fulfilled") partyLookup = lookupResult.value;
   if (summaryResult.status === "fulfilled" && summaryResult.value.by_group?.length) {
     const summary = summaryResult.value;
-    summaryEl.innerHTML = renderChart(summary) + renderNotes(summary) + renderTables(summary);
+    const filterEl = document.getElementById("cg-filter");
+    const renderSummary = () => {
+      const view = viewFor(summary);
+      summaryEl.innerHTML = (view.totals.trades
+        ? renderChart(view)
+        : searchMessage(`No disclosed AI-stock trades of ${sizeLabel()} in this window.`)) + renderNotes(view) + renderTables(view);
+    };
+    renderSummary();
+    // The filter needs the precomputed size counts, so it only appears when the summary has them.
+    if (summary.amount_filters?.length) {
+      filterEl.innerHTML = renderFilter();
+      filterEl.hidden = false;
+      filterEl.addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-min]");
+        if (!button || Number(button.dataset.min) === minAmount) return;
+        minAmount = Number(button.dataset.min);
+        filterEl.innerHTML = renderFilter();
+        renderSummary();
+        if (lastResults) showResults(resultsEl);
+        window.posthog?.capture("congress_amount_filter", { min_amount: minAmount, label: sizeLabel() });
+      });
+    }
   } else {
     summaryEl.innerHTML = searchMessage("The buys/sells summary isn't available yet. It updates once a day. Member search below works now.");
   }
