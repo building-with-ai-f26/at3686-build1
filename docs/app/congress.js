@@ -51,12 +51,17 @@ function renderFilter() {
     <p class="meta cg-filter-note">Amounts are disclosed as ranges (for example $15,001–$50,000), so a trade counts when the low end of its range meets the filter.</p>`;
 }
 
-// The summary as seen through the filter: same shape, smaller counts.
+// The summary as seen through the filter. Size-filtered data holds counts only
+// (no amounts or tickers, so tiny groups can't be traced to one trade), so
+// `filtered` tells the chart, notes, and tables to leave those parts out.
 function viewFor(summary) {
   const f = minAmount && summary.amount_filters?.find((x) => x.min === minAmount);
   if (!f) return summary;
   const unknown = f.by_group.filter((g) => g.party === "Unknown").reduce((n, g) => n + g.buys + g.sells, 0);
-  return { ...summary, by_group: f.by_group, by_ticker: f.by_ticker,
+  // Keep every group from the full view (with 0s), so the chart rows don't jump around.
+  const byGroup = summary.by_group.map(({ chamber, party }) =>
+    f.by_group.find((g) => g.chamber === chamber && g.party === party) || { chamber, party, buys: 0, sells: 0 });
+  return { ...summary, filtered: true, by_group: byGroup, by_ticker: [],
     totals: { ...f.totals, exchanges: f.totals.trades - f.totals.buys - f.totals.sells, unmatched_party: unknown } };
 }
 
@@ -88,8 +93,8 @@ function renderChart(summary) {
   const max = Math.max(1, ...groups.flatMap((g) => [g.buys, g.sells]));
   const bar = (side, g) => {
     const count = side === "buy" ? g.buys : g.sells;
-    const amount = range(g[`${side}_amount_low`], g[`${side}_amount_high`], g.open_ended > 0);
-    const label = `${groupLabel(g)}: ${count} ${side}${count === 1 ? "" : "s"}, ${amount} disclosed`;
+    const amount = summary.filtered ? "" : `, ${range(g[`${side}_amount_low`], g[`${side}_amount_high`], g.open_ended > 0)} disclosed`;
+    const label = `${groupLabel(g)}: ${count} ${side}${count === 1 ? "" : "s"}${amount}`;
     return `<div class="cg-half cg-${side}">
         <span class="cg-bar" style="width:${(count / max) * 100}%" tabindex="0" aria-label="${escapeHtml(label)}" data-tip="${escapeHtml(label)}"></span>
         <span class="cg-count">${count}</span>
@@ -104,6 +109,13 @@ function renderChart(summary) {
 }
 
 function renderTables(summary) {
+  if (summary.filtered) {
+    const rows = summary.by_group.map((g) => `<tr><td>${escapeHtml(groupLabel(g))}</td><td>${g.buys}</td><td>${g.sells}</td></tr>`).join("");
+    return `<details class="cg-tables"><summary>Show table</summary>
+      <div class="table-scroll"><table><thead><tr><th>Group</th><th>Buys</th><th>Sells</th></tr></thead><tbody>${rows}</tbody></table></div>
+      <p class="meta">With a size filter on, only counts are shown: no amounts or tickers, so small groups can't be traced to a single trade.</p>
+    </details>`;
+  }
   const groupRows = summary.by_group
     .map((g) => `<tr><td>${escapeHtml(groupLabel(g))}</td><td>${g.buys}</td><td>${g.sells}</td>
       <td>${range(g.buy_amount_low, g.buy_amount_high, false)}</td><td>${range(g.sell_amount_low, g.sell_amount_high, false)}</td></tr>`)
@@ -122,8 +134,9 @@ function renderNotes(summary) {
   const lag = summary.disclosure_lag_days;
   const allBuys = summary.by_group.reduce((s, g) => [s[0] + g.buy_amount_low, s[1] + g.buy_amount_high], [0, 0]);
   const allSells = summary.by_group.reduce((s, g) => [s[0] + g.sell_amount_low, s[1] + g.sell_amount_high], [0, 0]);
-  return `<p class="cg-totals">${minAmount ? `Trades of <strong>${escapeHtml(sizeLabel())}</strong>: ` : ""}<strong>${t.trades}</strong> disclosed trades: <strong>${t.buys}</strong> buys, <strong>${t.sells}</strong> sells${t.exchanges ? `, ${t.exchanges} exchange${t.exchanges === 1 ? "" : "s"}` : ""}.
-      Disclosed amounts: buys ${usd(allBuys[0])}–${usd(allBuys[1])}, sells ${usd(allSells[0])}–${usd(allSells[1])}.</p>
+  return `<p class="cg-totals">${summary.filtered ? `Trades of <strong>${escapeHtml(sizeLabel())}</strong>: ` : ""}<strong>${t.trades}</strong> disclosed trades: <strong>${t.buys}</strong> buys, <strong>${t.sells}</strong> sells${t.exchanges ? `, ${t.exchanges} exchange${t.exchanges === 1 ? "" : "s"}` : ""}.${
+      summary.filtered ? "" : `
+      Disclosed amounts: buys ${usd(allBuys[0])}–${usd(allBuys[1])}, sells ${usd(allSells[0])}–${usd(allSells[1])}.`}</p>
     <ul class="cg-notes meta">
       <li><strong>Up to 45 days late by law.</strong> Members have up to 45 days to disclose a trade, so recent trades may not appear yet.${
         Number.isFinite(lag.median) ? ` In this data the median gap from trade to disclosure was ${Math.round(lag.median)} days (longest ${Math.round(lag.max)}).` : ""}

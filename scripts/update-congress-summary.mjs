@@ -132,25 +132,23 @@ async function main() {
     by_ticker: Object.values(byTicker).sort((a, b) => b.buys + b.sells - (a.buys + a.sells)),
   };
 
-  // Trade-size filter: the same counts for trades whose disclosed range starts
-  // at or above each threshold (amounts are disclosed as ranges, so the low end
-  // decides). Still aggregates only.
+  // Trade-size filter: buy/sell COUNTS by chamber and party for trades whose
+  // disclosed range starts at or above each threshold (amounts are disclosed as
+  // ranges, so the low end decides). Large trades are rare, so these groups can
+  // be tiny: to keep any single record from being rebuilt (Bargo's terms), they
+  // carry no ticker breakdown and no amount totals, only counts.
   summary.amount_filters = AMOUNT_FILTERS.map(({ min, label }) => {
     const sized = trades.filter((t) => Number(t.amount_low) >= min);
     const g = {};
-    const tk = {};
     for (const t of sized) {
       const party = partyBucket(partyFor(t, lookup));
       addTrade((g[`${t.chamber}|${party}`] ||= { chamber: t.chamber, party, ...emptyTally() }), t);
-      addTrade((tk[t.ticker] ||= { ticker: t.ticker, ...emptyTally() }), t);
     }
-    const sum = (key) => Object.values(g).reduce((n, x) => n + x[key], 0);
-    return {
-      min, label,
-      totals: { trades: sized.length, buys: sum("buys"), sells: sum("sells") },
-      by_group: Object.values(g).sort((a, b) => a.chamber.localeCompare(b.chamber) || a.party.localeCompare(b.party)),
-      by_ticker: Object.values(tk).sort((a, b) => b.buys + b.sells - (a.buys + a.sells)),
-    };
+    const groupsOut = Object.values(g)
+      .map(({ chamber, party, buys, sells }) => ({ chamber, party, buys, sells }))
+      .sort((a, b) => a.chamber.localeCompare(b.chamber) || a.party.localeCompare(b.party));
+    const sum = (key) => groupsOut.reduce((n, x) => n + x[key], 0);
+    return { min, label, totals: { trades: sized.length, buys: sum("buys"), sells: sum("sells") }, by_group: groupsOut };
   });
 
   await mkdir(OUT_DIR, { recursive: true });
