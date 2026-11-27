@@ -226,12 +226,13 @@ function editDistance(a, b) {
   return row[b.length];
 }
 
-// Closest last names to the last word typed (up to 1 typo per 3 letters).
+// Closest names to the last word typed: up to 1 typo for short words, 2 for
+// words of 5+ letters (e.g. "Cruse" → Cruz).
 function suggestMembers(query) {
   const words = normalizeName(query);
   const word = words[words.length - 1] || "";
   if (word.length < 3) return [];
-  const limit = Math.max(1, Math.floor(word.length / 3));
+  const limit = word.length >= 5 ? 2 : 1;
   return members
     .map((m) => ({ m, d: Math.min(editDistance(word, m.lastKey), ...m.tokens.map((t) => editDistance(word, t))) }))
     .filter((x) => x.d <= limit)
