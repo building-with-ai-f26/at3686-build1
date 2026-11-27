@@ -1,0 +1,4346 @@
+{
+  "source": "https://github.com/unitedstates/congress-legislators (CC0)",
+  "members": [
+    {
+      "name": "Alma S. Adams",
+      "first": "Alma",
+      "last": "Adams",
+      "chamber": "house",
+      "state": "NC",
+      "party": "Democrat"
+    },
+    {
+      "name": "Robert B. Aderholt",
+      "first": "Robert",
+      "last": "Aderholt",
+      "chamber": "house",
+      "state": "AL",
+      "party": "Republican"
+    },
+    {
+      "name": "Pete Aguilar",
+      "first": "Pete",
+      "last": "Aguilar",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mark Alford",
+      "first": "Mark",
+      "last": "Alford",
+      "chamber": "house",
+      "state": "MO",
+      "party": "Republican"
+    },
+    {
+      "name": "Rick W. Allen",
+      "first": "Rick",
+      "last": "Allen",
+      "chamber": "house",
+      "state": "GA",
+      "party": "Republican"
+    },
+    {
+      "name": "Angela D. Alsobrooks",
+      "first": "Angela",
+      "last": "Alsobrooks",
+      "chamber": "senate",
+      "state": "MD",
+      "party": "Democrat"
+    },
+    {
+      "name": "Gabe Amo",
+      "first": "Gabe",
+      "last": "Amo",
+      "chamber": "house",
+      "state": "RI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mark E. Amodei",
+      "first": "Mark",
+      "last": "Amodei",
+      "chamber": "house",
+      "state": "NV",
+      "party": "Republican"
+    },
+    {
+      "name": "Yassamin Ansari",
+      "first": "Yassamin",
+      "last": "Ansari",
+      "chamber": "house",
+      "state": "AZ",
+      "party": "Democrat"
+    },
+    {
+      "name": "Alan Armstrong",
+      "first": "Alan",
+      "last": "Armstrong",
+      "chamber": "senate",
+      "state": "OK",
+      "party": "Republican"
+    },
+    {
+      "name": "Jodey C. Arrington",
+      "first": "Jodey",
+      "last": "Arrington",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Jake Auchincloss",
+      "first": "Jake",
+      "last": "Auchincloss",
+      "chamber": "house",
+      "state": "MA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Brian Babin",
+      "first": "Brian",
+      "last": "Babin",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Don Bacon",
+      "first": "Don",
+      "last": "Bacon",
+      "chamber": "house",
+      "state": "NE",
+      "party": "Republican"
+    },
+    {
+      "name": "James R. Baird",
+      "first": "James",
+      "last": "Baird",
+      "chamber": "house",
+      "state": "IN",
+      "party": "Republican"
+    },
+    {
+      "name": "Troy Balderson",
+      "first": "Troy",
+      "last": "Balderson",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Republican"
+    },
+    {
+      "name": "Tammy Baldwin",
+      "first": "Tammy",
+      "last": "Baldwin",
+      "chamber": "senate",
+      "state": "WI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Becca Balint",
+      "first": "Becca",
+      "last": "Balint",
+      "chamber": "house",
+      "state": "VT",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jim Banks",
+      "first": "Jim",
+      "last": "Banks",
+      "chamber": "senate",
+      "state": "IN",
+      "party": "Republican"
+    },
+    {
+      "name": "Andy Barr",
+      "first": "Garland",
+      "nickname": "Andy",
+      "last": "Barr",
+      "chamber": "house",
+      "state": "KY",
+      "party": "Republican"
+    },
+    {
+      "name": "Nanette Diaz Barragán",
+      "first": "Nanette",
+      "last": "Barragán",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "John Barrasso",
+      "first": "John",
+      "last": "Barrasso",
+      "chamber": "senate",
+      "state": "WY",
+      "party": "Republican"
+    },
+    {
+      "name": "Tom Barrett",
+      "first": "Tom",
+      "last": "Barrett",
+      "chamber": "house",
+      "state": "MI",
+      "party": "Republican"
+    },
+    {
+      "name": "Michael Baumgartner",
+      "first": "Michael",
+      "last": "Baumgartner",
+      "chamber": "house",
+      "state": "WA",
+      "party": "Republican"
+    },
+    {
+      "name": "Aaron Bean",
+      "first": "Aaron",
+      "last": "Bean",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Joyce Beatty",
+      "first": "Joyce",
+      "last": "Beatty",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Democrat"
+    },
+    {
+      "name": "Nicholas J. Begich III",
+      "first": "Nicholas",
+      "last": "Begich",
+      "chamber": "house",
+      "state": "AK",
+      "party": "Republican"
+    },
+    {
+      "name": "Wesley Bell",
+      "first": "Wesley",
+      "last": "Bell",
+      "chamber": "house",
+      "state": "MO",
+      "party": "Democrat"
+    },
+    {
+      "name": "Michael F. Bennet",
+      "first": "Michael",
+      "last": "Bennet",
+      "chamber": "senate",
+      "state": "CO",
+      "party": "Democrat"
+    },
+    {
+      "name": "Cliff Bentz",
+      "first": "Cliff",
+      "last": "Bentz",
+      "chamber": "house",
+      "state": "OR",
+      "party": "Republican"
+    },
+    {
+      "name": "Ami Bera",
+      "first": "Ami",
+      "last": "Bera",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jack Bergman",
+      "first": "Jack",
+      "last": "Bergman",
+      "chamber": "house",
+      "state": "MI",
+      "party": "Republican"
+    },
+    {
+      "name": "Donald S. Beyer, Jr.",
+      "first": "Donald",
+      "last": "Beyer",
+      "chamber": "house",
+      "state": "VA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Stephanie I. Bice",
+      "first": "Stephanie",
+      "last": "Bice",
+      "chamber": "house",
+      "state": "OK",
+      "party": "Republican"
+    },
+    {
+      "name": "Andy Biggs",
+      "first": "Andy",
+      "last": "Biggs",
+      "chamber": "house",
+      "state": "AZ",
+      "party": "Republican"
+    },
+    {
+      "name": "Sheri Biggs",
+      "first": "Sheri",
+      "last": "Biggs",
+      "chamber": "house",
+      "state": "SC",
+      "party": "Republican"
+    },
+    {
+      "name": "Gus M. Bilirakis",
+      "first": "Gus",
+      "last": "Bilirakis",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Sanford D. Bishop, Jr.",
+      "first": "Sanford",
+      "last": "Bishop",
+      "chamber": "house",
+      "state": "GA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Marsha Blackburn",
+      "first": "Marsha",
+      "last": "Blackburn",
+      "chamber": "senate",
+      "state": "TN",
+      "party": "Republican"
+    },
+    {
+      "name": "Everton Blair Jr.",
+      "first": "Everton",
+      "last": "Blair",
+      "chamber": "house",
+      "state": "GA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Richard Blumenthal",
+      "first": "Richard",
+      "last": "Blumenthal",
+      "chamber": "senate",
+      "state": "CT",
+      "party": "Democrat"
+    },
+    {
+      "name": "Lisa Blunt Rochester",
+      "first": "Lisa",
+      "last": "Blunt Rochester",
+      "chamber": "senate",
+      "state": "DE",
+      "party": "Democrat"
+    },
+    {
+      "name": "Lauren Boebert",
+      "first": "Lauren",
+      "last": "Boebert",
+      "chamber": "house",
+      "state": "CO",
+      "party": "Republican"
+    },
+    {
+      "name": "Suzanne Bonamici",
+      "first": "Suzanne",
+      "last": "Bonamici",
+      "chamber": "house",
+      "state": "OR",
+      "party": "Democrat"
+    },
+    {
+      "name": "Cory A. Booker",
+      "first": "Cory",
+      "last": "Booker",
+      "chamber": "senate",
+      "state": "NJ",
+      "party": "Democrat"
+    },
+    {
+      "name": "John Boozman",
+      "first": "John",
+      "last": "Boozman",
+      "chamber": "senate",
+      "state": "AR",
+      "party": "Republican"
+    },
+    {
+      "name": "Mike Bost",
+      "first": "Mike",
+      "last": "Bost",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Republican"
+    },
+    {
+      "name": "Brendan F. Boyle",
+      "first": "Brendan",
+      "last": "Boyle",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Josh Brecheen",
+      "first": "Josh",
+      "last": "Brecheen",
+      "chamber": "house",
+      "state": "OK",
+      "party": "Republican"
+    },
+    {
+      "name": "Robert P. Bresnahan, Jr.",
+      "first": "Robert",
+      "last": "Bresnahan",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Republican"
+    },
+    {
+      "name": "Katie Boyd Britt",
+      "first": "Katie",
+      "last": "Britt",
+      "chamber": "senate",
+      "state": "AL",
+      "party": "Republican"
+    },
+    {
+      "name": "Shontel M. Brown",
+      "first": "Shontel",
+      "last": "Brown",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Democrat"
+    },
+    {
+      "name": "Julia Brownley",
+      "first": "Julia",
+      "last": "Brownley",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Vern Buchanan",
+      "first": "Vern",
+      "last": "Buchanan",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Ted Budd",
+      "first": "Ted",
+      "last": "Budd",
+      "chamber": "senate",
+      "state": "NC",
+      "party": "Republican"
+    },
+    {
+      "name": "Nikki Budzinski",
+      "first": "Nicole (Nikki)",
+      "last": "Budzinski",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Tim Burchett",
+      "first": "Tim",
+      "last": "Burchett",
+      "chamber": "house",
+      "state": "TN",
+      "party": "Republican"
+    },
+    {
+      "name": "Eric Burlison",
+      "first": "Eric",
+      "last": "Burlison",
+      "chamber": "house",
+      "state": "MO",
+      "party": "Republican"
+    },
+    {
+      "name": "Janelle S. Bynum",
+      "first": "Janelle",
+      "last": "Bynum",
+      "chamber": "house",
+      "state": "OR",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ken Calvert",
+      "first": "Ken",
+      "last": "Calvert",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Republican"
+    },
+    {
+      "name": "Kat Cammack",
+      "first": "Katherine",
+      "nickname": "Kat",
+      "last": "Cammack",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Maria Cantwell",
+      "first": "Maria",
+      "last": "Cantwell",
+      "chamber": "senate",
+      "state": "WA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Shelley Moore Capito",
+      "first": "Shelley",
+      "last": "Capito",
+      "chamber": "senate",
+      "state": "WV",
+      "party": "Republican"
+    },
+    {
+      "name": "Salud O. Carbajal",
+      "first": "Salud",
+      "last": "Carbajal",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mike Carey",
+      "first": "Mike",
+      "last": "Carey",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Republican"
+    },
+    {
+      "name": "André Carson",
+      "first": "André",
+      "last": "Carson",
+      "chamber": "house",
+      "state": "IN",
+      "party": "Democrat"
+    },
+    {
+      "name": "Earl L. \"Buddy\" Carter",
+      "first": "Earl",
+      "nickname": "Buddy",
+      "last": "Carter",
+      "chamber": "house",
+      "state": "GA",
+      "party": "Republican"
+    },
+    {
+      "name": "John R. Carter",
+      "first": "John",
+      "last": "Carter",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Troy A. Carter",
+      "first": "Troy",
+      "last": "Carter",
+      "chamber": "house",
+      "state": "LA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Greg Casar",
+      "first": "Gregorio",
+      "last": "Casar",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ed Case",
+      "first": "Ed",
+      "last": "Case",
+      "chamber": "house",
+      "state": "HI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Bill Cassidy",
+      "first": "Bill",
+      "last": "Cassidy",
+      "chamber": "senate",
+      "state": "LA",
+      "party": "Republican"
+    },
+    {
+      "name": "Sean Casten",
+      "first": "Sean",
+      "last": "Casten",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Kathy Castor",
+      "first": "Kathy",
+      "last": "Castor",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Joaquin Castro",
+      "first": "Joaquin",
+      "last": "Castro",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Democrat"
+    },
+    {
+      "name": "Judy Chu",
+      "first": "Judy",
+      "last": "Chu",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Juan Ciscomani",
+      "first": "Juan",
+      "last": "Ciscomani",
+      "chamber": "house",
+      "state": "AZ",
+      "party": "Republican"
+    },
+    {
+      "name": "Gilbert Ray Cisneros, Jr.",
+      "first": "Gilbert",
+      "last": "Cisneros",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Katherine M. Clark",
+      "first": "Katherine",
+      "last": "Clark",
+      "chamber": "house",
+      "state": "MA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Yvette D. Clarke",
+      "first": "Yvette",
+      "last": "Clarke",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Emanuel Cleaver",
+      "first": "Emanuel",
+      "last": "Cleaver",
+      "chamber": "house",
+      "state": "MO",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ben Cline",
+      "first": "Ben",
+      "last": "Cline",
+      "chamber": "house",
+      "state": "VA",
+      "party": "Republican"
+    },
+    {
+      "name": "Michael Cloud",
+      "first": "Michael",
+      "last": "Cloud",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "James E. Clyburn",
+      "first": "James",
+      "nickname": "Jim",
+      "last": "Clyburn",
+      "chamber": "house",
+      "state": "SC",
+      "party": "Democrat"
+    },
+    {
+      "name": "Andrew S. Clyde",
+      "first": "Andrew",
+      "last": "Clyde",
+      "chamber": "house",
+      "state": "GA",
+      "party": "Republican"
+    },
+    {
+      "name": "Steve Cohen",
+      "first": "Steve",
+      "last": "Cohen",
+      "chamber": "house",
+      "state": "TN",
+      "party": "Democrat"
+    },
+    {
+      "name": "Tom Cole",
+      "first": "Tom",
+      "last": "Cole",
+      "chamber": "house",
+      "state": "OK",
+      "party": "Republican"
+    },
+    {
+      "name": "Mike Collins",
+      "first": "Mike",
+      "last": "Collins",
+      "chamber": "house",
+      "state": "GA",
+      "party": "Republican"
+    },
+    {
+      "name": "Susan M. Collins",
+      "first": "Susan",
+      "last": "Collins",
+      "chamber": "senate",
+      "state": "ME",
+      "party": "Republican"
+    },
+    {
+      "name": "James Comer",
+      "first": "James",
+      "last": "Comer",
+      "chamber": "house",
+      "state": "KY",
+      "party": "Republican"
+    },
+    {
+      "name": "Herbert C. Conaway, Jr.",
+      "first": "Herbert",
+      "last": "Conaway",
+      "chamber": "house",
+      "state": "NJ",
+      "party": "Democrat"
+    },
+    {
+      "name": "Christopher A. Coons",
+      "first": "Christopher",
+      "last": "Coons",
+      "chamber": "senate",
+      "state": "DE",
+      "party": "Democrat"
+    },
+    {
+      "name": "John Cornyn",
+      "first": "John",
+      "last": "Cornyn",
+      "chamber": "senate",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "J. Luis Correa",
+      "first": "J.",
+      "last": "Correa",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Catherine Cortez Masto",
+      "first": "Catherine",
+      "last": "Cortez Masto",
+      "chamber": "senate",
+      "state": "NV",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jim Costa",
+      "first": "Jim",
+      "last": "Costa",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Tom Cotton",
+      "first": "Tom",
+      "last": "Cotton",
+      "chamber": "senate",
+      "state": "AR",
+      "party": "Republican"
+    },
+    {
+      "name": "Joe Courtney",
+      "first": "Joe",
+      "last": "Courtney",
+      "chamber": "house",
+      "state": "CT",
+      "party": "Democrat"
+    },
+    {
+      "name": "Angie Craig",
+      "first": "Angie",
+      "last": "Craig",
+      "chamber": "house",
+      "state": "MN",
+      "party": "Democrat"
+    },
+    {
+      "name": "Kevin Cramer",
+      "first": "Kevin",
+      "last": "Cramer",
+      "chamber": "senate",
+      "state": "ND",
+      "party": "Republican"
+    },
+    {
+      "name": "Elijah Crane",
+      "first": "Eli",
+      "last": "Crane",
+      "chamber": "house",
+      "state": "AZ",
+      "party": "Republican"
+    },
+    {
+      "name": "Jeff Crank",
+      "first": "Jeff",
+      "last": "Crank",
+      "chamber": "house",
+      "state": "CO",
+      "party": "Republican"
+    },
+    {
+      "name": "Mike Crapo",
+      "first": "Michael",
+      "nickname": "Mike",
+      "last": "Crapo",
+      "chamber": "senate",
+      "state": "ID",
+      "party": "Republican"
+    },
+    {
+      "name": "Eric A. \"Rick\" Crawford",
+      "first": "Eric",
+      "nickname": "Rick",
+      "last": "Crawford",
+      "chamber": "house",
+      "state": "AR",
+      "party": "Republican"
+    },
+    {
+      "name": "Dan Crenshaw",
+      "first": "Dan",
+      "last": "Crenshaw",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Jasmine Crockett",
+      "first": "Jasmine",
+      "last": "Crockett",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jason Crow",
+      "first": "Jason",
+      "last": "Crow",
+      "chamber": "house",
+      "state": "CO",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ted Cruz",
+      "first": "Ted",
+      "last": "Cruz",
+      "chamber": "senate",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Henry Cuellar",
+      "first": "Henry",
+      "last": "Cuellar",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Democrat"
+    },
+    {
+      "name": "John R. Curtis",
+      "first": "John",
+      "last": "Curtis",
+      "chamber": "senate",
+      "state": "UT",
+      "party": "Republican"
+    },
+    {
+      "name": "Steve Daines",
+      "first": "Steve",
+      "last": "Daines",
+      "chamber": "senate",
+      "state": "MT",
+      "party": "Republican"
+    },
+    {
+      "name": "Sharice Davids",
+      "first": "Sharice",
+      "last": "Davids",
+      "chamber": "house",
+      "state": "KS",
+      "party": "Democrat"
+    },
+    {
+      "name": "Warren Davidson",
+      "first": "Warren",
+      "last": "Davidson",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Republican"
+    },
+    {
+      "name": "Danny K. Davis",
+      "first": "Danny",
+      "last": "Davis",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Donald G. Davis",
+      "first": "Donald",
+      "last": "Davis",
+      "chamber": "house",
+      "state": "NC",
+      "party": "Democrat"
+    },
+    {
+      "name": "Monica De La Cruz",
+      "first": "Mónica",
+      "last": "De La Cruz",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Madeleine Dean",
+      "first": "Madeleine",
+      "last": "Dean",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Diana DeGette",
+      "first": "Diana",
+      "last": "DeGette",
+      "chamber": "house",
+      "state": "CO",
+      "party": "Democrat"
+    },
+    {
+      "name": "Rosa L. DeLauro",
+      "first": "Rosa",
+      "last": "DeLauro",
+      "chamber": "house",
+      "state": "CT",
+      "party": "Democrat"
+    },
+    {
+      "name": "Suzan K. DelBene",
+      "first": "Suzan",
+      "last": "DelBene",
+      "chamber": "house",
+      "state": "WA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Christopher R. Deluzio",
+      "first": "Chris",
+      "last": "Deluzio",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mark DeSaulnier",
+      "first": "Mark",
+      "last": "DeSaulnier",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Scott DesJarlais",
+      "first": "Scott",
+      "last": "DesJarlais",
+      "chamber": "house",
+      "state": "TN",
+      "party": "Republican"
+    },
+    {
+      "name": "Maxine Dexter",
+      "first": "Maxine",
+      "last": "Dexter",
+      "chamber": "house",
+      "state": "OR",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mario Diaz-Balart",
+      "first": "Mario",
+      "last": "Diaz-Balart",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Debbie Dingell",
+      "first": "Debbie",
+      "last": "Dingell",
+      "chamber": "house",
+      "state": "MI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Lloyd Doggett",
+      "first": "Lloyd",
+      "last": "Doggett",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Democrat"
+    },
+    {
+      "name": "Byron Donalds",
+      "first": "Byron",
+      "last": "Donalds",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Troy Downing",
+      "first": "Troy",
+      "last": "Downing",
+      "chamber": "house",
+      "state": "MT",
+      "party": "Republican"
+    },
+    {
+      "name": "Tammy Duckworth",
+      "first": "Tammy",
+      "last": "Duckworth",
+      "chamber": "senate",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Neal P. Dunn",
+      "first": "Neal",
+      "last": "Dunn",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Richard J. Durbin",
+      "first": "Richard",
+      "last": "Durbin",
+      "chamber": "senate",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Chuck Edwards",
+      "first": "Charles (Chuck)",
+      "last": "Edwards",
+      "chamber": "house",
+      "state": "NC",
+      "party": "Republican"
+    },
+    {
+      "name": "Sarah Elfreth",
+      "first": "Sarah",
+      "last": "Elfreth",
+      "chamber": "house",
+      "state": "MD",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jake Ellzey",
+      "first": "Jake",
+      "last": "Ellzey",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Tom Emmer",
+      "first": "Tom",
+      "last": "Emmer",
+      "chamber": "house",
+      "state": "MN",
+      "party": "Republican"
+    },
+    {
+      "name": "Joni Ernst",
+      "first": "Joni",
+      "last": "Ernst",
+      "chamber": "senate",
+      "state": "IA",
+      "party": "Republican"
+    },
+    {
+      "name": "Veronica Escobar",
+      "first": "Veronica",
+      "last": "Escobar",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Democrat"
+    },
+    {
+      "name": "Adriano Espaillat",
+      "first": "Adriano",
+      "last": "Espaillat",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ron Estes",
+      "first": "Ron",
+      "last": "Estes",
+      "chamber": "house",
+      "state": "KS",
+      "party": "Republican"
+    },
+    {
+      "name": "Dwight Evans",
+      "first": "Dwight",
+      "last": "Evans",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Gabe Evans",
+      "first": "Gabe",
+      "last": "Evans",
+      "chamber": "house",
+      "state": "CO",
+      "party": "Republican"
+    },
+    {
+      "name": "Mike Ezell",
+      "first": "Mike",
+      "last": "Ezell",
+      "chamber": "house",
+      "state": "MS",
+      "party": "Republican"
+    },
+    {
+      "name": "Pat Fallon",
+      "first": "Patrick",
+      "nickname": "Pat",
+      "last": "Fallon",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Julie Fedorchak",
+      "first": "Julie",
+      "last": "Fedorchak",
+      "chamber": "house",
+      "state": "ND",
+      "party": "Republican"
+    },
+    {
+      "name": "Randy Feenstra",
+      "first": "Randy",
+      "last": "Feenstra",
+      "chamber": "house",
+      "state": "IA",
+      "party": "Republican"
+    },
+    {
+      "name": "John Fetterman",
+      "first": "John",
+      "last": "Fetterman",
+      "chamber": "senate",
+      "state": "PA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Cleo Fields",
+      "first": "Cleo",
+      "last": "Fields",
+      "chamber": "house",
+      "state": "LA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Shomari Figures",
+      "first": "Shomari",
+      "last": "Figures",
+      "chamber": "house",
+      "state": "AL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Randy Fine",
+      "first": "Randall",
+      "nickname": "Randy",
+      "last": "Fine",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Brad Finstad",
+      "first": "Brad",
+      "last": "Finstad",
+      "chamber": "house",
+      "state": "MN",
+      "party": "Republican"
+    },
+    {
+      "name": "Michelle Fischbach",
+      "first": "Michelle",
+      "last": "Fischbach",
+      "chamber": "house",
+      "state": "MN",
+      "party": "Republican"
+    },
+    {
+      "name": "Deb Fischer",
+      "first": "Deb",
+      "last": "Fischer",
+      "chamber": "senate",
+      "state": "NE",
+      "party": "Republican"
+    },
+    {
+      "name": "Scott Fitzgerald",
+      "first": "Scott",
+      "last": "Fitzgerald",
+      "chamber": "house",
+      "state": "WI",
+      "party": "Republican"
+    },
+    {
+      "name": "Brian K. Fitzpatrick",
+      "first": "Brian",
+      "last": "Fitzpatrick",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Republican"
+    },
+    {
+      "name": "Charles J. \"Chuck\" Fleischmann",
+      "first": "Charles",
+      "nickname": "Chuck",
+      "last": "Fleischmann",
+      "chamber": "house",
+      "state": "TN",
+      "party": "Republican"
+    },
+    {
+      "name": "Lizzie Fletcher",
+      "first": "Lizzie",
+      "last": "Fletcher",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mike Flood",
+      "first": "Mike",
+      "last": "Flood",
+      "chamber": "house",
+      "state": "NE",
+      "party": "Republican"
+    },
+    {
+      "name": "Vince Fong",
+      "first": "Vince",
+      "last": "Fong",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Republican"
+    },
+    {
+      "name": "Bill Foster",
+      "first": "Bill",
+      "last": "Foster",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Valerie P. Foushee",
+      "first": "Valerie",
+      "last": "Foushee",
+      "chamber": "house",
+      "state": "NC",
+      "party": "Democrat"
+    },
+    {
+      "name": "Virginia Foxx",
+      "first": "Virginia",
+      "last": "Foxx",
+      "chamber": "house",
+      "state": "NC",
+      "party": "Republican"
+    },
+    {
+      "name": "Lois Frankel",
+      "first": "Lois",
+      "last": "Frankel",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Scott Franklin",
+      "first": "C.",
+      "last": "Franklin",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Laura Friedman",
+      "first": "Laura",
+      "last": "Friedman",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Maxwell Frost",
+      "first": "Maxwell",
+      "last": "Frost",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Russell Fry",
+      "first": "Russell",
+      "last": "Fry",
+      "chamber": "house",
+      "state": "SC",
+      "party": "Republican"
+    },
+    {
+      "name": "Russ Fulcher",
+      "first": "Russ",
+      "last": "Fulcher",
+      "chamber": "house",
+      "state": "ID",
+      "party": "Republican"
+    },
+    {
+      "name": "Clay Fuller",
+      "first": "Clay",
+      "last": "Fuller",
+      "chamber": "house",
+      "state": "GA",
+      "party": "Republican"
+    },
+    {
+      "name": "James Gallagher",
+      "first": "James",
+      "last": "Gallagher",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Republican"
+    },
+    {
+      "name": "Ruben Gallego",
+      "first": "Ruben",
+      "last": "Gallego",
+      "chamber": "senate",
+      "state": "AZ",
+      "party": "Democrat"
+    },
+    {
+      "name": "John Garamendi",
+      "first": "John",
+      "last": "Garamendi",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Andrew R. Garbarino",
+      "first": "Andrew",
+      "last": "Garbarino",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Republican"
+    },
+    {
+      "name": "Robert Garcia",
+      "first": "Robert",
+      "last": "Garcia",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Sylvia R. Garcia",
+      "first": "Sylvia",
+      "last": "Garcia",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jesús G. \"Chuy\" García",
+      "first": "Jesús",
+      "nickname": "Chuy",
+      "last": "García",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Brandon Gill",
+      "first": "Brandon",
+      "last": "Gill",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Laura Gillen",
+      "first": "Laura",
+      "last": "Gillen",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Kirsten E. Gillibrand",
+      "first": "Kirsten",
+      "last": "Gillibrand",
+      "chamber": "senate",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Carlos A. Gimenez",
+      "first": "Carlos",
+      "last": "Gimenez",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Marie Gluesenkamp Perez",
+      "first": "Marie",
+      "last": "Gluesenkamp Perez",
+      "chamber": "house",
+      "state": "WA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jared F. Golden",
+      "first": "Jared",
+      "last": "Golden",
+      "chamber": "house",
+      "state": "ME",
+      "party": "Democrat"
+    },
+    {
+      "name": "Craig A. Goldman",
+      "first": "Craig",
+      "last": "Goldman",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Daniel S. Goldman",
+      "first": "Dan",
+      "last": "Goldman",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jimmy Gomez",
+      "first": "Jimmy",
+      "last": "Gomez",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Vicente Gonzalez",
+      "first": "Vicente",
+      "last": "Gonzalez",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Democrat"
+    },
+    {
+      "name": "Lance Gooden",
+      "first": "Lance",
+      "last": "Gooden",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Maggie Goodlander",
+      "first": "Maggie",
+      "last": "Goodlander",
+      "chamber": "house",
+      "state": "NH",
+      "party": "Democrat"
+    },
+    {
+      "name": "Paul A. Gosar",
+      "first": "Paul",
+      "last": "Gosar",
+      "chamber": "house",
+      "state": "AZ",
+      "party": "Republican"
+    },
+    {
+      "name": "Josh Gottheimer",
+      "first": "Josh",
+      "last": "Gottheimer",
+      "chamber": "house",
+      "state": "NJ",
+      "party": "Democrat"
+    },
+    {
+      "name": "Darline Graham",
+      "first": "Darline",
+      "last": "Graham Nordone",
+      "chamber": "senate",
+      "state": "SC",
+      "party": "Republican"
+    },
+    {
+      "name": "Chuck Grassley",
+      "first": "Charles",
+      "nickname": "Chuck",
+      "last": "Grassley",
+      "chamber": "senate",
+      "state": "IA",
+      "party": "Republican"
+    },
+    {
+      "name": "Sam Graves",
+      "first": "Sam",
+      "last": "Graves",
+      "chamber": "house",
+      "state": "MO",
+      "party": "Republican"
+    },
+    {
+      "name": "Adam Gray",
+      "first": "Adam",
+      "last": "Gray",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Al Green",
+      "first": "Al",
+      "last": "Green",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Democrat"
+    },
+    {
+      "name": "H. Morgan Griffith",
+      "first": "H.",
+      "last": "Griffith",
+      "chamber": "house",
+      "state": "VA",
+      "party": "Republican"
+    },
+    {
+      "name": "Adelita S. Grijalva",
+      "first": "Adelita",
+      "last": "Grijalva",
+      "chamber": "house",
+      "state": "AZ",
+      "party": "Democrat"
+    },
+    {
+      "name": "Glenn Grothman",
+      "first": "Glenn",
+      "last": "Grothman",
+      "chamber": "house",
+      "state": "WI",
+      "party": "Republican"
+    },
+    {
+      "name": "Michael Guest",
+      "first": "Michael",
+      "last": "Guest",
+      "chamber": "house",
+      "state": "MS",
+      "party": "Republican"
+    },
+    {
+      "name": "Brett Guthrie",
+      "first": "Brett",
+      "last": "Guthrie",
+      "chamber": "house",
+      "state": "KY",
+      "party": "Republican"
+    },
+    {
+      "name": "Harriet M. Hageman",
+      "first": "Harriet",
+      "last": "Hageman",
+      "chamber": "house",
+      "state": "WY",
+      "party": "Republican"
+    },
+    {
+      "name": "Bill Hagerty",
+      "first": "Bill",
+      "last": "Hagerty",
+      "chamber": "senate",
+      "state": "TN",
+      "party": "Republican"
+    },
+    {
+      "name": "Abraham J. Hamadeh",
+      "first": "Abraham",
+      "last": "Hamadeh",
+      "chamber": "house",
+      "state": "AZ",
+      "party": "Republican"
+    },
+    {
+      "name": "Josh Harder",
+      "first": "Josh",
+      "last": "Harder",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mike Haridopolos",
+      "first": "Mike",
+      "last": "Haridopolos",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Pat Harrigan",
+      "first": "Pat",
+      "last": "Harrigan",
+      "chamber": "house",
+      "state": "NC",
+      "party": "Republican"
+    },
+    {
+      "name": "Andy Harris",
+      "first": "Andy",
+      "last": "Harris",
+      "chamber": "house",
+      "state": "MD",
+      "party": "Republican"
+    },
+    {
+      "name": "Mark Harris",
+      "first": "Mark",
+      "last": "Harris",
+      "chamber": "house",
+      "state": "NC",
+      "party": "Republican"
+    },
+    {
+      "name": "Diana Harshbarger",
+      "first": "Diana",
+      "last": "Harshbarger",
+      "chamber": "house",
+      "state": "TN",
+      "party": "Republican"
+    },
+    {
+      "name": "Margaret Wood Hassan",
+      "first": "Margaret",
+      "nickname": "Maggie",
+      "last": "Hassan",
+      "chamber": "senate",
+      "state": "NH",
+      "party": "Democrat"
+    },
+    {
+      "name": "Josh Hawley",
+      "first": "Joshua",
+      "nickname": "Josh",
+      "last": "Hawley",
+      "chamber": "senate",
+      "state": "MO",
+      "party": "Republican"
+    },
+    {
+      "name": "Jahana Hayes",
+      "first": "Jahana",
+      "last": "Hayes",
+      "chamber": "house",
+      "state": "CT",
+      "party": "Democrat"
+    },
+    {
+      "name": "Martin Heinrich",
+      "first": "Martin",
+      "last": "Heinrich",
+      "chamber": "senate",
+      "state": "NM",
+      "party": "Democrat"
+    },
+    {
+      "name": "Kevin Hern",
+      "first": "Kevin",
+      "last": "Hern",
+      "chamber": "house",
+      "state": "OK",
+      "party": "Republican"
+    },
+    {
+      "name": "Pablo José Hernández",
+      "first": "Pablo José",
+      "last": "Hernández Rivera",
+      "chamber": "house",
+      "state": "PR",
+      "party": "Democrat"
+    },
+    {
+      "name": "John W. Hickenlooper",
+      "first": "John",
+      "last": "Hickenlooper",
+      "chamber": "senate",
+      "state": "CO",
+      "party": "Democrat"
+    },
+    {
+      "name": "Clay Higgins",
+      "first": "Clay",
+      "last": "Higgins",
+      "chamber": "house",
+      "state": "LA",
+      "party": "Republican"
+    },
+    {
+      "name": "J. French Hill",
+      "first": "J.",
+      "last": "Hill",
+      "chamber": "house",
+      "state": "AR",
+      "party": "Republican"
+    },
+    {
+      "name": "James A. Himes",
+      "first": "James",
+      "nickname": "Jim",
+      "last": "Himes",
+      "chamber": "house",
+      "state": "CT",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ashley Hinson",
+      "first": "Ashley",
+      "last": "Hinson",
+      "chamber": "house",
+      "state": "IA",
+      "party": "Republican"
+    },
+    {
+      "name": "Mazie K. Hirono",
+      "first": "Mazie",
+      "last": "Hirono",
+      "chamber": "senate",
+      "state": "HI",
+      "party": "Democrat"
+    },
+    {
+      "name": "John Hoeven",
+      "first": "John",
+      "last": "Hoeven",
+      "chamber": "senate",
+      "state": "ND",
+      "party": "Republican"
+    },
+    {
+      "name": "Steven Horsford",
+      "first": "Steven",
+      "last": "Horsford",
+      "chamber": "house",
+      "state": "NV",
+      "party": "Democrat"
+    },
+    {
+      "name": "Erin Houchin",
+      "first": "Erin",
+      "last": "Houchin",
+      "chamber": "house",
+      "state": "IN",
+      "party": "Republican"
+    },
+    {
+      "name": "Chrissy Houlahan",
+      "first": "Chrissy",
+      "last": "Houlahan",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Steny H. Hoyer",
+      "first": "Steny",
+      "last": "Hoyer",
+      "chamber": "house",
+      "state": "MD",
+      "party": "Democrat"
+    },
+    {
+      "name": "Val T. Hoyle",
+      "first": "Valerie",
+      "last": "Hoyle",
+      "chamber": "house",
+      "state": "OR",
+      "party": "Democrat"
+    },
+    {
+      "name": "Richard Hudson",
+      "first": "Richard",
+      "last": "Hudson",
+      "chamber": "house",
+      "state": "NC",
+      "party": "Republican"
+    },
+    {
+      "name": "Jared Huffman",
+      "first": "Jared",
+      "last": "Huffman",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Bill Huizenga",
+      "first": "Bill",
+      "last": "Huizenga",
+      "chamber": "house",
+      "state": "MI",
+      "party": "Republican"
+    },
+    {
+      "name": "Wesley Hunt",
+      "first": "Wesley",
+      "last": "Hunt",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Jeff Hurd",
+      "first": "Jeff",
+      "last": "Hurd",
+      "chamber": "house",
+      "state": "CO",
+      "party": "Republican"
+    },
+    {
+      "name": "Jon Husted",
+      "first": "Jon",
+      "last": "Husted",
+      "chamber": "senate",
+      "state": "OH",
+      "party": "Republican"
+    },
+    {
+      "name": "Cindy Hyde-Smith",
+      "first": "Cindy",
+      "last": "Hyde-Smith",
+      "chamber": "senate",
+      "state": "MS",
+      "party": "Republican"
+    },
+    {
+      "name": "Darrell Issa",
+      "first": "Darrell",
+      "last": "Issa",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Republican"
+    },
+    {
+      "name": "Glenn Ivey",
+      "first": "Glenn",
+      "last": "Ivey",
+      "chamber": "house",
+      "state": "MD",
+      "party": "Democrat"
+    },
+    {
+      "name": "Brian Jack",
+      "first": "Brian",
+      "last": "Jack",
+      "chamber": "house",
+      "state": "GA",
+      "party": "Republican"
+    },
+    {
+      "name": "Jonathan L. Jackson",
+      "first": "Jonathan",
+      "last": "Jackson",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ronny Jackson",
+      "first": "Ronny",
+      "last": "Jackson",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Sara Jacobs",
+      "first": "Sara",
+      "last": "Jacobs",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "John James",
+      "first": "John",
+      "last": "James",
+      "chamber": "house",
+      "state": "MI",
+      "party": "Republican"
+    },
+    {
+      "name": "Pramila Jayapal",
+      "first": "Pramila",
+      "last": "Jayapal",
+      "chamber": "house",
+      "state": "WA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Hakeem S. Jeffries",
+      "first": "Hakeem",
+      "last": "Jeffries",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Dusty Johnson",
+      "first": "Dusty",
+      "last": "Johnson",
+      "chamber": "house",
+      "state": "SD",
+      "party": "Republican"
+    },
+    {
+      "name": "Henry C. \"Hank\" Johnson, Jr.",
+      "first": "Henry",
+      "nickname": "Hank",
+      "last": "Johnson",
+      "chamber": "house",
+      "state": "GA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Julie Johnson",
+      "first": "Julie",
+      "last": "Johnson",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mike Johnson",
+      "first": "Mike",
+      "last": "Johnson",
+      "chamber": "house",
+      "state": "LA",
+      "party": "Republican"
+    },
+    {
+      "name": "Ron Johnson",
+      "first": "Ron",
+      "last": "Johnson",
+      "chamber": "senate",
+      "state": "WI",
+      "party": "Republican"
+    },
+    {
+      "name": "Jim Jordan",
+      "first": "Jim",
+      "last": "Jordan",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Republican"
+    },
+    {
+      "name": "David P. Joyce",
+      "first": "David",
+      "last": "Joyce",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Republican"
+    },
+    {
+      "name": "John Joyce",
+      "first": "John",
+      "last": "Joyce",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Republican"
+    },
+    {
+      "name": "James C. Justice",
+      "first": "Jim",
+      "last": "Justice",
+      "chamber": "senate",
+      "state": "WV",
+      "party": "Republican"
+    },
+    {
+      "name": "Tim Kaine",
+      "first": "Timothy",
+      "nickname": "Tim",
+      "last": "Kaine",
+      "chamber": "senate",
+      "state": "VA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Sydney Kamlager-Dove",
+      "first": "Sydney",
+      "last": "Kamlager-Dove",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Marcy Kaptur",
+      "first": "Marcy",
+      "last": "Kaptur",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Democrat"
+    },
+    {
+      "name": "Thomas H. Kean, Jr.",
+      "first": "Thomas",
+      "last": "Kean",
+      "chamber": "house",
+      "state": "NJ",
+      "party": "Republican"
+    },
+    {
+      "name": "William R. Keating",
+      "first": "William",
+      "last": "Keating",
+      "chamber": "house",
+      "state": "MA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mark Kelly",
+      "first": "Mark",
+      "last": "Kelly",
+      "chamber": "senate",
+      "state": "AZ",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mike Kelly",
+      "first": "Mike",
+      "last": "Kelly",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Republican"
+    },
+    {
+      "name": "Robin L. Kelly",
+      "first": "Robin",
+      "last": "Kelly",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Trent Kelly",
+      "first": "Trent",
+      "last": "Kelly",
+      "chamber": "house",
+      "state": "MS",
+      "party": "Republican"
+    },
+    {
+      "name": "John Kennedy",
+      "first": "John",
+      "last": "Kennedy",
+      "chamber": "senate",
+      "state": "LA",
+      "party": "Republican"
+    },
+    {
+      "name": "Mike Kennedy",
+      "first": "Mike",
+      "last": "Kennedy",
+      "chamber": "house",
+      "state": "UT",
+      "party": "Republican"
+    },
+    {
+      "name": "Timothy M. Kennedy",
+      "first": "Timothy",
+      "last": "Kennedy",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ro Khanna",
+      "first": "Ro",
+      "last": "Khanna",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jennifer A. Kiggans",
+      "first": "Jennifer",
+      "last": "Kiggans",
+      "chamber": "house",
+      "state": "VA",
+      "party": "Republican"
+    },
+    {
+      "name": "Kevin Kiley",
+      "first": "Kevin",
+      "last": "Kiley",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Independent"
+    },
+    {
+      "name": "Andy Kim",
+      "first": "Andy",
+      "last": "Kim",
+      "chamber": "senate",
+      "state": "NJ",
+      "party": "Democrat"
+    },
+    {
+      "name": "Young Kim",
+      "first": "Young",
+      "last": "Kim",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Republican"
+    },
+    {
+      "name": "Angus S. King, Jr.",
+      "first": "Angus",
+      "last": "King",
+      "chamber": "senate",
+      "state": "ME",
+      "party": "Independent"
+    },
+    {
+      "name": "Kimberlyn King-Hinds",
+      "first": "Kimberlyn",
+      "last": "King-Hinds",
+      "chamber": "house",
+      "state": "MP",
+      "party": "Republican"
+    },
+    {
+      "name": "Amy Klobuchar",
+      "first": "Amy",
+      "last": "Klobuchar",
+      "chamber": "senate",
+      "state": "MN",
+      "party": "Democrat"
+    },
+    {
+      "name": "Brad Knott",
+      "first": "Brad",
+      "last": "Knott",
+      "chamber": "house",
+      "state": "NC",
+      "party": "Republican"
+    },
+    {
+      "name": "Raja Krishnamoorthi",
+      "first": "Raja",
+      "last": "Krishnamoorthi",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "David Kustoff",
+      "first": "David",
+      "last": "Kustoff",
+      "chamber": "house",
+      "state": "TN",
+      "party": "Republican"
+    },
+    {
+      "name": "Darin LaHood",
+      "first": "Darin",
+      "last": "LaHood",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Republican"
+    },
+    {
+      "name": "Nick LaLota",
+      "first": "Nicolas",
+      "last": "LaLota",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Republican"
+    },
+    {
+      "name": "Greg Landsman",
+      "first": "Greg",
+      "last": "Landsman",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Democrat"
+    },
+    {
+      "name": "Nicholas A. Langworthy",
+      "first": "Nicholas",
+      "last": "Langworthy",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Republican"
+    },
+    {
+      "name": "James Lankford",
+      "first": "James",
+      "last": "Lankford",
+      "chamber": "senate",
+      "state": "OK",
+      "party": "Republican"
+    },
+    {
+      "name": "Rick Larsen",
+      "first": "Rick",
+      "last": "Larsen",
+      "chamber": "house",
+      "state": "WA",
+      "party": "Democrat"
+    },
+    {
+      "name": "John B. Larson",
+      "first": "John",
+      "last": "Larson",
+      "chamber": "house",
+      "state": "CT",
+      "party": "Democrat"
+    },
+    {
+      "name": "George Latimer",
+      "first": "George",
+      "last": "Latimer",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Robert E. Latta",
+      "first": "Robert",
+      "last": "Latta",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Republican"
+    },
+    {
+      "name": "Michael Lawler",
+      "first": "Michael",
+      "last": "Lawler",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Republican"
+    },
+    {
+      "name": "Laurel M. Lee",
+      "first": "Laurel",
+      "last": "Lee",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Mike Lee",
+      "first": "Mike",
+      "last": "Lee",
+      "chamber": "senate",
+      "state": "UT",
+      "party": "Republican"
+    },
+    {
+      "name": "Summer L. Lee",
+      "first": "Summer",
+      "last": "Lee",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Susie Lee",
+      "first": "Susie",
+      "last": "Lee",
+      "chamber": "house",
+      "state": "NV",
+      "party": "Democrat"
+    },
+    {
+      "name": "Teresa Leger Fernandez",
+      "first": "Teresa",
+      "last": "Leger Fernandez",
+      "chamber": "house",
+      "state": "NM",
+      "party": "Democrat"
+    },
+    {
+      "name": "Julia Letlow",
+      "first": "Julia",
+      "last": "Letlow",
+      "chamber": "house",
+      "state": "LA",
+      "party": "Republican"
+    },
+    {
+      "name": "Mike Levin",
+      "first": "Mike",
+      "last": "Levin",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Sam T. Liccardo",
+      "first": "Sam",
+      "last": "Liccardo",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ted Lieu",
+      "first": "Ted",
+      "last": "Lieu",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Zoe Lofgren",
+      "first": "Zoe",
+      "last": "Lofgren",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Barry Loudermilk",
+      "first": "Barry",
+      "last": "Loudermilk",
+      "chamber": "house",
+      "state": "GA",
+      "party": "Republican"
+    },
+    {
+      "name": "Frank D. Lucas",
+      "first": "Frank",
+      "last": "Lucas",
+      "chamber": "house",
+      "state": "OK",
+      "party": "Republican"
+    },
+    {
+      "name": "Ben Ray Luján",
+      "first": "Ben",
+      "last": "Luján",
+      "chamber": "senate",
+      "state": "NM",
+      "party": "Democrat"
+    },
+    {
+      "name": "Cynthia M. Lummis",
+      "first": "Cynthia",
+      "last": "Lummis",
+      "chamber": "senate",
+      "state": "WY",
+      "party": "Republican"
+    },
+    {
+      "name": "Anna Paulina Luna",
+      "first": "Anna",
+      "last": "Luna",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Morgan Luttrell",
+      "first": "Morgan",
+      "last": "Luttrell",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Stephen F. Lynch",
+      "first": "Stephen",
+      "last": "Lynch",
+      "chamber": "house",
+      "state": "MA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Nancy Mace",
+      "first": "Nancy",
+      "last": "Mace",
+      "chamber": "house",
+      "state": "SC",
+      "party": "Republican"
+    },
+    {
+      "name": "Ryan Mackenzie",
+      "first": "Ryan",
+      "last": "Mackenzie",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Republican"
+    },
+    {
+      "name": "Seth Magaziner",
+      "first": "Seth",
+      "last": "Magaziner",
+      "chamber": "house",
+      "state": "RI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Nicole Malliotakis",
+      "first": "Nicole",
+      "last": "Malliotakis",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Republican"
+    },
+    {
+      "name": "Celeste Maloy",
+      "first": "Celeste",
+      "last": "Maloy",
+      "chamber": "house",
+      "state": "UT",
+      "party": "Republican"
+    },
+    {
+      "name": "Tracey Mann",
+      "first": "Tracey",
+      "last": "Mann",
+      "chamber": "house",
+      "state": "KS",
+      "party": "Republican"
+    },
+    {
+      "name": "John W. Mannion",
+      "first": "John",
+      "last": "Mannion",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Edward J. Markey",
+      "first": "Edward",
+      "nickname": "Ed",
+      "last": "Markey",
+      "chamber": "senate",
+      "state": "MA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Roger Marshall",
+      "first": "Roger",
+      "last": "Marshall",
+      "chamber": "senate",
+      "state": "KS",
+      "party": "Republican"
+    },
+    {
+      "name": "Thomas Massie",
+      "first": "Thomas",
+      "last": "Massie",
+      "chamber": "house",
+      "state": "KY",
+      "party": "Republican"
+    },
+    {
+      "name": "Brian J. Mast",
+      "first": "Brian",
+      "last": "Mast",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Doris O. Matsui",
+      "first": "Doris",
+      "last": "Matsui",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Lucy McBath",
+      "first": "Lucy",
+      "last": "McBath",
+      "chamber": "house",
+      "state": "GA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Sarah McBride",
+      "first": "Sarah",
+      "last": "McBride",
+      "chamber": "house",
+      "state": "DE",
+      "party": "Democrat"
+    },
+    {
+      "name": "Michael T. McCaul",
+      "first": "Michael",
+      "last": "McCaul",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Lisa C. McClain",
+      "first": "Lisa",
+      "last": "McClain",
+      "chamber": "house",
+      "state": "MI",
+      "party": "Republican"
+    },
+    {
+      "name": "April McClain Delaney",
+      "first": "April",
+      "last": "McClain Delaney",
+      "chamber": "house",
+      "state": "MD",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jennifer L. McClellan",
+      "first": "Jennifer",
+      "last": "McClellan",
+      "chamber": "house",
+      "state": "VA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Tom McClintock",
+      "first": "Tom",
+      "last": "McClintock",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Republican"
+    },
+    {
+      "name": "Betty McCollum",
+      "first": "Betty",
+      "last": "McCollum",
+      "chamber": "house",
+      "state": "MN",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mitch McConnell",
+      "first": "Mitch",
+      "last": "McConnell",
+      "chamber": "senate",
+      "state": "KY",
+      "party": "Republican"
+    },
+    {
+      "name": "David McCormick",
+      "first": "Dave",
+      "last": "McCormick",
+      "chamber": "senate",
+      "state": "PA",
+      "party": "Republican"
+    },
+    {
+      "name": "Richard McCormick",
+      "first": "Rich",
+      "last": "McCormick",
+      "chamber": "house",
+      "state": "GA",
+      "party": "Republican"
+    },
+    {
+      "name": "Kristen McDonald Rivet",
+      "first": "Kristen",
+      "last": "McDonald Rivet",
+      "chamber": "house",
+      "state": "MI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Addison P. McDowell",
+      "first": "Addison",
+      "last": "McDowell",
+      "chamber": "house",
+      "state": "NC",
+      "party": "Republican"
+    },
+    {
+      "name": "Morgan McGarvey",
+      "first": "Morgan",
+      "last": "McGarvey",
+      "chamber": "house",
+      "state": "KY",
+      "party": "Democrat"
+    },
+    {
+      "name": "James P. McGovern",
+      "first": "James",
+      "nickname": "Jim",
+      "last": "McGovern",
+      "chamber": "house",
+      "state": "MA",
+      "party": "Democrat"
+    },
+    {
+      "name": "John J. McGuire III",
+      "first": "John",
+      "last": "McGuire",
+      "chamber": "house",
+      "state": "VA",
+      "party": "Republican"
+    },
+    {
+      "name": "LaMonica McIver",
+      "first": "LaMonica",
+      "last": "McIver",
+      "chamber": "house",
+      "state": "NJ",
+      "party": "Democrat"
+    },
+    {
+      "name": "Gregory W. Meeks",
+      "first": "Gregory",
+      "last": "Meeks",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Analilia Mejia",
+      "first": "Analilia",
+      "last": "Mejia",
+      "chamber": "house",
+      "state": "NJ",
+      "party": "Democrat"
+    },
+    {
+      "name": "Christian D. Menefee",
+      "first": "Christian",
+      "last": "Menefee",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Democrat"
+    },
+    {
+      "name": "Robert Menendez",
+      "first": "Robert",
+      "last": "Menendez",
+      "chamber": "house",
+      "state": "NJ",
+      "party": "Democrat"
+    },
+    {
+      "name": "Grace Meng",
+      "first": "Grace",
+      "last": "Meng",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jeff Merkley",
+      "first": "Jeff",
+      "last": "Merkley",
+      "chamber": "senate",
+      "state": "OR",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mark B. Messmer",
+      "first": "Mark",
+      "last": "Messmer",
+      "chamber": "house",
+      "state": "IN",
+      "party": "Republican"
+    },
+    {
+      "name": "Daniel Meuser",
+      "first": "Daniel",
+      "last": "Meuser",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Republican"
+    },
+    {
+      "name": "Kweisi Mfume",
+      "first": "Kweisi",
+      "last": "Mfume",
+      "chamber": "house",
+      "state": "MD",
+      "party": "Democrat"
+    },
+    {
+      "name": "Carol D. Miller",
+      "first": "Carol",
+      "last": "Miller",
+      "chamber": "house",
+      "state": "WV",
+      "party": "Republican"
+    },
+    {
+      "name": "Mary E. Miller",
+      "first": "Mary",
+      "last": "Miller",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Republican"
+    },
+    {
+      "name": "Max L. Miller",
+      "first": "Max",
+      "last": "Miller",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Republican"
+    },
+    {
+      "name": "Mariannette Miller-Meeks",
+      "first": "Mariannette",
+      "last": "Miller-Meeks",
+      "chamber": "house",
+      "state": "IA",
+      "party": "Republican"
+    },
+    {
+      "name": "Cory Mills",
+      "first": "Cory",
+      "last": "Mills",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Dave Min",
+      "first": "Dave",
+      "last": "Min",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ashley Moody",
+      "first": "Ashley",
+      "last": "Moody",
+      "chamber": "senate",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "John R. Moolenaar",
+      "first": "John",
+      "last": "Moolenaar",
+      "chamber": "house",
+      "state": "MI",
+      "party": "Republican"
+    },
+    {
+      "name": "Barry Moore",
+      "first": "Barry",
+      "last": "Moore",
+      "chamber": "house",
+      "state": "AL",
+      "party": "Republican"
+    },
+    {
+      "name": "Blake D. Moore",
+      "first": "Blake",
+      "last": "Moore",
+      "chamber": "house",
+      "state": "UT",
+      "party": "Republican"
+    },
+    {
+      "name": "Gwen Moore",
+      "first": "Gwen",
+      "last": "Moore",
+      "chamber": "house",
+      "state": "WI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Riley M. Moore",
+      "first": "Riley",
+      "last": "Moore",
+      "chamber": "house",
+      "state": "WV",
+      "party": "Republican"
+    },
+    {
+      "name": "Tim Moore",
+      "first": "Tim",
+      "last": "Moore",
+      "chamber": "house",
+      "state": "NC",
+      "party": "Republican"
+    },
+    {
+      "name": "Jerry Moran",
+      "first": "Jerry",
+      "last": "Moran",
+      "chamber": "senate",
+      "state": "KS",
+      "party": "Republican"
+    },
+    {
+      "name": "Nathaniel Moran",
+      "first": "Nathaniel",
+      "last": "Moran",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Joseph D. Morelle",
+      "first": "Joseph",
+      "last": "Morelle",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Bernie Moreno",
+      "first": "Bernie",
+      "last": "Moreno",
+      "chamber": "senate",
+      "state": "OH",
+      "party": "Republican"
+    },
+    {
+      "name": "Kelly Morrison",
+      "first": "Kelly",
+      "last": "Morrison",
+      "chamber": "house",
+      "state": "MN",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jared Moskowitz",
+      "first": "Jared",
+      "last": "Moskowitz",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Seth Moulton",
+      "first": "Seth",
+      "last": "Moulton",
+      "chamber": "house",
+      "state": "MA",
+      "party": "Democrat"
+    },
+    {
+      "name": "James C. Moylan",
+      "first": "James (Jim)",
+      "last": "Moylan",
+      "chamber": "house",
+      "state": "GU",
+      "party": "Republican"
+    },
+    {
+      "name": "Frank J. Mrvan",
+      "first": "Frank",
+      "last": "Mrvan",
+      "chamber": "house",
+      "state": "IN",
+      "party": "Democrat"
+    },
+    {
+      "name": "Kevin Mullin",
+      "first": "Kevin",
+      "last": "Mullin",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Lisa Murkowski",
+      "first": "Lisa",
+      "last": "Murkowski",
+      "chamber": "senate",
+      "state": "AK",
+      "party": "Republican"
+    },
+    {
+      "name": "Christopher Murphy",
+      "first": "Christopher",
+      "last": "Murphy",
+      "chamber": "senate",
+      "state": "CT",
+      "party": "Democrat"
+    },
+    {
+      "name": "Gregory F. Murphy",
+      "first": "Gregory",
+      "last": "Murphy",
+      "chamber": "house",
+      "state": "NC",
+      "party": "Republican"
+    },
+    {
+      "name": "Patty Murray",
+      "first": "Patty",
+      "last": "Murray",
+      "chamber": "senate",
+      "state": "WA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jerrold Nadler",
+      "first": "Jerrold",
+      "last": "Nadler",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Richard E. Neal",
+      "first": "Richard",
+      "last": "Neal",
+      "chamber": "house",
+      "state": "MA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Joe Neguse",
+      "first": "Joe",
+      "last": "Neguse",
+      "chamber": "house",
+      "state": "CO",
+      "party": "Democrat"
+    },
+    {
+      "name": "Troy E. Nehls",
+      "first": "Troy",
+      "last": "Nehls",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Dan Newhouse",
+      "first": "Dan",
+      "last": "Newhouse",
+      "chamber": "house",
+      "state": "WA",
+      "party": "Republican"
+    },
+    {
+      "name": "Donald Norcross",
+      "first": "Donald",
+      "last": "Norcross",
+      "chamber": "house",
+      "state": "NJ",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ralph Norman",
+      "first": "Ralph",
+      "last": "Norman",
+      "chamber": "house",
+      "state": "SC",
+      "party": "Republican"
+    },
+    {
+      "name": "Eleanor Holmes Norton",
+      "first": "Eleanor",
+      "last": "Norton",
+      "chamber": "house",
+      "state": "DC",
+      "party": "Democrat"
+    },
+    {
+      "name": "Zachary Nunn",
+      "first": "Zachary (Zach)",
+      "last": "Nunn",
+      "chamber": "house",
+      "state": "IA",
+      "party": "Republican"
+    },
+    {
+      "name": "Jay Obernolte",
+      "first": "Jay",
+      "last": "Obernolte",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Republican"
+    },
+    {
+      "name": "Alexandria Ocasio-Cortez",
+      "first": "Alexandria",
+      "last": "Ocasio-Cortez",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Andrew Ogles",
+      "first": "Andrew",
+      "last": "Ogles",
+      "chamber": "house",
+      "state": "TN",
+      "party": "Republican"
+    },
+    {
+      "name": "Johnny Olszewski, Jr.",
+      "first": "Johnny",
+      "last": "Olszewski",
+      "chamber": "house",
+      "state": "MD",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ilhan Omar",
+      "first": "Ilhan",
+      "last": "Omar",
+      "chamber": "house",
+      "state": "MN",
+      "party": "Democrat"
+    },
+    {
+      "name": "Robert F. Onder, Jr.",
+      "first": "Robert",
+      "last": "Onder",
+      "chamber": "house",
+      "state": "MO",
+      "party": "Republican"
+    },
+    {
+      "name": "Jon Ossoff",
+      "first": "Jon",
+      "last": "Ossoff",
+      "chamber": "senate",
+      "state": "GA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Burgess Owens",
+      "first": "Clarence",
+      "nickname": "Burgess",
+      "last": "Owens",
+      "chamber": "house",
+      "state": "UT",
+      "party": "Republican"
+    },
+    {
+      "name": "Alex Padilla",
+      "first": "Alejandro",
+      "nickname": "Alex",
+      "last": "Padilla",
+      "chamber": "senate",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Frank Pallone, Jr.",
+      "first": "Frank",
+      "last": "Pallone",
+      "chamber": "house",
+      "state": "NJ",
+      "party": "Democrat"
+    },
+    {
+      "name": "Gary J. Palmer",
+      "first": "Gary",
+      "last": "Palmer",
+      "chamber": "house",
+      "state": "AL",
+      "party": "Republican"
+    },
+    {
+      "name": "Jimmy Panetta",
+      "first": "Jimmy",
+      "last": "Panetta",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Chris Pappas",
+      "first": "Chris",
+      "last": "Pappas",
+      "chamber": "house",
+      "state": "NH",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jimmy Patronis",
+      "first": "Jimmy",
+      "last": "Patronis",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Rand Paul",
+      "first": "Rand",
+      "last": "Paul",
+      "chamber": "senate",
+      "state": "KY",
+      "party": "Republican"
+    },
+    {
+      "name": "Nancy Pelosi",
+      "first": "Nancy",
+      "last": "Pelosi",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Scott Perry",
+      "first": "Scott",
+      "last": "Perry",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Republican"
+    },
+    {
+      "name": "Gary C. Peters",
+      "first": "Gary",
+      "last": "Peters",
+      "chamber": "senate",
+      "state": "MI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Scott H. Peters",
+      "first": "Scott",
+      "last": "Peters",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Brittany Pettersen",
+      "first": "Brittany",
+      "last": "Pettersen",
+      "chamber": "house",
+      "state": "CO",
+      "party": "Democrat"
+    },
+    {
+      "name": "August Pfluger",
+      "first": "August",
+      "last": "Pfluger",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Chellie Pingree",
+      "first": "Chellie",
+      "last": "Pingree",
+      "chamber": "house",
+      "state": "ME",
+      "party": "Democrat"
+    },
+    {
+      "name": "Stacey E. Plaskett",
+      "first": "Stacey",
+      "last": "Plaskett",
+      "chamber": "house",
+      "state": "VI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mark Pocan",
+      "first": "Mark",
+      "last": "Pocan",
+      "chamber": "house",
+      "state": "WI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Nellie Pou",
+      "first": "Nellie",
+      "last": "Pou",
+      "chamber": "house",
+      "state": "NJ",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ayanna Pressley",
+      "first": "Ayanna",
+      "last": "Pressley",
+      "chamber": "house",
+      "state": "MA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mike Quigley",
+      "first": "Mike",
+      "last": "Quigley",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Aumua Amata Coleman Radewagen",
+      "first": "Aumua Amata",
+      "last": "Radewagen",
+      "chamber": "house",
+      "state": "AS",
+      "party": "Republican"
+    },
+    {
+      "name": "Delia C. Ramirez",
+      "first": "Delia",
+      "last": "Ramirez",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Emily Randall",
+      "first": "Emily",
+      "last": "Randall",
+      "chamber": "house",
+      "state": "WA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jamie Raskin",
+      "first": "Jamie",
+      "last": "Raskin",
+      "chamber": "house",
+      "state": "MD",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jack Reed",
+      "first": "John",
+      "nickname": "Jack",
+      "last": "Reed",
+      "chamber": "senate",
+      "state": "RI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Guy Reschenthaler",
+      "first": "Guy",
+      "last": "Reschenthaler",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Republican"
+    },
+    {
+      "name": "Pete Ricketts",
+      "first": "Pete",
+      "last": "Ricketts",
+      "chamber": "senate",
+      "state": "NE",
+      "party": "Republican"
+    },
+    {
+      "name": "Josh Riley",
+      "first": "Josh",
+      "last": "Riley",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "James E. Risch",
+      "first": "James",
+      "last": "Risch",
+      "chamber": "senate",
+      "state": "ID",
+      "party": "Republican"
+    },
+    {
+      "name": "Luz M. Rivas",
+      "first": "Luz",
+      "last": "Rivas",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Harold Rogers",
+      "first": "Harold",
+      "nickname": "Hal",
+      "last": "Rogers",
+      "chamber": "house",
+      "state": "KY",
+      "party": "Republican"
+    },
+    {
+      "name": "Mike Rogers",
+      "first": "Mike",
+      "last": "Rogers",
+      "chamber": "house",
+      "state": "AL",
+      "party": "Republican"
+    },
+    {
+      "name": "John W. Rose",
+      "first": "John",
+      "last": "Rose",
+      "chamber": "house",
+      "state": "TN",
+      "party": "Republican"
+    },
+    {
+      "name": "Jacky Rosen",
+      "first": "Jacky",
+      "last": "Rosen",
+      "chamber": "senate",
+      "state": "NV",
+      "party": "Democrat"
+    },
+    {
+      "name": "Deborah K. Ross",
+      "first": "Deborah",
+      "last": "Ross",
+      "chamber": "house",
+      "state": "NC",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mike Rounds",
+      "first": "Mike",
+      "last": "Rounds",
+      "chamber": "senate",
+      "state": "SD",
+      "party": "Republican"
+    },
+    {
+      "name": "David Rouzer",
+      "first": "David",
+      "last": "Rouzer",
+      "chamber": "house",
+      "state": "NC",
+      "party": "Republican"
+    },
+    {
+      "name": "Chip Roy",
+      "first": "Chip",
+      "last": "Roy",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Raul Ruiz",
+      "first": "Raul",
+      "last": "Ruiz",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Michael A. Rulli",
+      "first": "Michael",
+      "last": "Rulli",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Republican"
+    },
+    {
+      "name": "John H. Rutherford",
+      "first": "John",
+      "last": "Rutherford",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Patrick Ryan",
+      "first": "Patrick",
+      "last": "Ryan",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Maria Elvira Salazar",
+      "first": "Maria",
+      "last": "Salazar",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Andrea Salinas",
+      "first": "Andrea",
+      "last": "Salinas",
+      "chamber": "house",
+      "state": "OR",
+      "party": "Democrat"
+    },
+    {
+      "name": "Linda T. Sánchez",
+      "first": "Linda",
+      "last": "Sánchez",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Bernard Sanders",
+      "first": "Bernard",
+      "nickname": "Bernie",
+      "last": "Sanders",
+      "chamber": "senate",
+      "state": "VT",
+      "party": "Independent"
+    },
+    {
+      "name": "Steve Scalise",
+      "first": "Steve",
+      "last": "Scalise",
+      "chamber": "house",
+      "state": "LA",
+      "party": "Republican"
+    },
+    {
+      "name": "Mary Gay Scanlon",
+      "first": "Mary",
+      "last": "Scanlon",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Janice D. Schakowsky",
+      "first": "Janice",
+      "nickname": "Jan",
+      "last": "Schakowsky",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Brian Schatz",
+      "first": "Brian",
+      "last": "Schatz",
+      "chamber": "senate",
+      "state": "HI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Adam B. Schiff",
+      "first": "Adam",
+      "last": "Schiff",
+      "chamber": "senate",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Derek Schmidt",
+      "first": "Derek",
+      "last": "Schmidt",
+      "chamber": "house",
+      "state": "KS",
+      "party": "Republican"
+    },
+    {
+      "name": "Eric Schmitt",
+      "first": "Eric",
+      "last": "Schmitt",
+      "chamber": "senate",
+      "state": "MO",
+      "party": "Republican"
+    },
+    {
+      "name": "Bradley Scott Schneider",
+      "first": "Bradley",
+      "nickname": "Brad",
+      "last": "Schneider",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Hillary J. Scholten",
+      "first": "Hillary",
+      "last": "Scholten",
+      "chamber": "house",
+      "state": "MI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Kim Schrier",
+      "first": "Kim",
+      "last": "Schrier",
+      "chamber": "house",
+      "state": "WA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Charles E. Schumer",
+      "first": "Charles",
+      "nickname": "Chuck",
+      "last": "Schumer",
+      "chamber": "senate",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "David Schweikert",
+      "first": "David",
+      "last": "Schweikert",
+      "chamber": "house",
+      "state": "AZ",
+      "party": "Republican"
+    },
+    {
+      "name": "Austin Scott",
+      "first": "Austin",
+      "last": "Scott",
+      "chamber": "house",
+      "state": "GA",
+      "party": "Republican"
+    },
+    {
+      "name": "Rick Scott",
+      "first": "Rick",
+      "last": "Scott",
+      "chamber": "senate",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Robert C. \"Bobby\" Scott",
+      "first": "Robert",
+      "nickname": "Bobby",
+      "last": "Scott",
+      "chamber": "house",
+      "state": "VA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Tim Scott",
+      "first": "Tim",
+      "last": "Scott",
+      "chamber": "senate",
+      "state": "SC",
+      "party": "Republican"
+    },
+    {
+      "name": "Keith Self",
+      "first": "Keith",
+      "last": "Self",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Pete Sessions",
+      "first": "Pete",
+      "last": "Sessions",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Terri A. Sewell",
+      "first": "Terri",
+      "last": "Sewell",
+      "chamber": "house",
+      "state": "AL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jeanne Shaheen",
+      "first": "Jeanne",
+      "last": "Shaheen",
+      "chamber": "senate",
+      "state": "NH",
+      "party": "Democrat"
+    },
+    {
+      "name": "Tim Sheehy",
+      "first": "Tim",
+      "last": "Sheehy",
+      "chamber": "senate",
+      "state": "MT",
+      "party": "Republican"
+    },
+    {
+      "name": "Brad Sherman",
+      "first": "Brad",
+      "last": "Sherman",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jefferson Shreve",
+      "first": "Jefferson",
+      "last": "Shreve",
+      "chamber": "house",
+      "state": "IN",
+      "party": "Republican"
+    },
+    {
+      "name": "Lateefah Simon",
+      "first": "Lateefah",
+      "last": "Simon",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Michael K. Simpson",
+      "first": "Michael",
+      "nickname": "Mike",
+      "last": "Simpson",
+      "chamber": "house",
+      "state": "ID",
+      "party": "Republican"
+    },
+    {
+      "name": "Elissa Slotkin",
+      "first": "Elissa",
+      "last": "Slotkin",
+      "chamber": "senate",
+      "state": "MI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Adam Smith",
+      "first": "Adam",
+      "last": "Smith",
+      "chamber": "house",
+      "state": "WA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Adrian Smith",
+      "first": "Adrian",
+      "last": "Smith",
+      "chamber": "house",
+      "state": "NE",
+      "party": "Republican"
+    },
+    {
+      "name": "Christopher H. Smith",
+      "first": "Christopher",
+      "nickname": "Chris",
+      "last": "Smith",
+      "chamber": "house",
+      "state": "NJ",
+      "party": "Republican"
+    },
+    {
+      "name": "Jason Smith",
+      "first": "Jason",
+      "last": "Smith",
+      "chamber": "house",
+      "state": "MO",
+      "party": "Republican"
+    },
+    {
+      "name": "Tina Smith",
+      "first": "Tina",
+      "last": "Smith",
+      "chamber": "senate",
+      "state": "MN",
+      "party": "Democrat"
+    },
+    {
+      "name": "Lloyd Smucker",
+      "first": "Lloyd",
+      "last": "Smucker",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Republican"
+    },
+    {
+      "name": "Eric Sorensen",
+      "first": "Eric",
+      "last": "Sorensen",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Darren Soto",
+      "first": "Darren",
+      "last": "Soto",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Victoria Spartz",
+      "first": "Victoria",
+      "last": "Spartz",
+      "chamber": "house",
+      "state": "IN",
+      "party": "Republican"
+    },
+    {
+      "name": "Melanie A. Stansbury",
+      "first": "Melanie",
+      "last": "Stansbury",
+      "chamber": "house",
+      "state": "NM",
+      "party": "Democrat"
+    },
+    {
+      "name": "Greg Stanton",
+      "first": "Greg",
+      "last": "Stanton",
+      "chamber": "house",
+      "state": "AZ",
+      "party": "Democrat"
+    },
+    {
+      "name": "Pete Stauber",
+      "first": "Pete",
+      "last": "Stauber",
+      "chamber": "house",
+      "state": "MN",
+      "party": "Republican"
+    },
+    {
+      "name": "Elise M. Stefanik",
+      "first": "Elise",
+      "last": "Stefanik",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Republican"
+    },
+    {
+      "name": "Bryan Steil",
+      "first": "Bryan",
+      "last": "Steil",
+      "chamber": "house",
+      "state": "WI",
+      "party": "Republican"
+    },
+    {
+      "name": "W. Gregory Steube",
+      "first": "W.",
+      "last": "Steube",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Haley M. Stevens",
+      "first": "Haley",
+      "last": "Stevens",
+      "chamber": "house",
+      "state": "MI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Marilyn Strickland",
+      "first": "Marilyn",
+      "last": "Strickland",
+      "chamber": "house",
+      "state": "WA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Dale W. Strong",
+      "first": "Dale",
+      "last": "Strong",
+      "chamber": "house",
+      "state": "AL",
+      "party": "Republican"
+    },
+    {
+      "name": "Marlin A. Stutzman",
+      "first": "Marlin",
+      "last": "Stutzman",
+      "chamber": "house",
+      "state": "IN",
+      "party": "Republican"
+    },
+    {
+      "name": "Suhas Subramanyam",
+      "first": "Suhas",
+      "last": "Subramanyam",
+      "chamber": "house",
+      "state": "VA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Dan Sullivan",
+      "first": "Dan",
+      "last": "Sullivan",
+      "chamber": "senate",
+      "state": "AK",
+      "party": "Republican"
+    },
+    {
+      "name": "Thomas R. Suozzi",
+      "first": "Thomas",
+      "last": "Suozzi",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Emilia Strong Sykes",
+      "first": "Emilia",
+      "last": "Sykes",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mark Takano",
+      "first": "Mark",
+      "last": "Takano",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "David J. Taylor",
+      "first": "David",
+      "last": "Taylor",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Republican"
+    },
+    {
+      "name": "Claudia Tenney",
+      "first": "Claudia",
+      "last": "Tenney",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Republican"
+    },
+    {
+      "name": "Shri Thanedar",
+      "first": "Shri",
+      "last": "Thanedar",
+      "chamber": "house",
+      "state": "MI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Bennie G. Thompson",
+      "first": "Bennie",
+      "last": "Thompson",
+      "chamber": "house",
+      "state": "MS",
+      "party": "Democrat"
+    },
+    {
+      "name": "Glenn Thompson",
+      "first": "Glenn",
+      "last": "Thompson",
+      "chamber": "house",
+      "state": "PA",
+      "party": "Republican"
+    },
+    {
+      "name": "Mike Thompson",
+      "first": "Mike",
+      "last": "Thompson",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "John Thune",
+      "first": "John",
+      "last": "Thune",
+      "chamber": "senate",
+      "state": "SD",
+      "party": "Republican"
+    },
+    {
+      "name": "Thomas P. Tiffany",
+      "first": "Thomas",
+      "last": "Tiffany",
+      "chamber": "house",
+      "state": "WI",
+      "party": "Republican"
+    },
+    {
+      "name": "Thom Tillis",
+      "first": "Thom",
+      "last": "Tillis",
+      "chamber": "senate",
+      "state": "NC",
+      "party": "Republican"
+    },
+    {
+      "name": "William R. Timmons IV",
+      "first": "William",
+      "last": "Timmons",
+      "chamber": "house",
+      "state": "SC",
+      "party": "Republican"
+    },
+    {
+      "name": "Dina Titus",
+      "first": "Dina",
+      "last": "Titus",
+      "chamber": "house",
+      "state": "NV",
+      "party": "Democrat"
+    },
+    {
+      "name": "Rashida Tlaib",
+      "first": "Rashida",
+      "last": "Tlaib",
+      "chamber": "house",
+      "state": "MI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Jill N. Tokuda",
+      "first": "Jill",
+      "last": "Tokuda",
+      "chamber": "house",
+      "state": "HI",
+      "party": "Democrat"
+    },
+    {
+      "name": "Paul Tonko",
+      "first": "Paul",
+      "last": "Tonko",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Norma J. Torres",
+      "first": "Norma",
+      "last": "Torres",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ritchie Torres",
+      "first": "Ritchie",
+      "last": "Torres",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Lori Trahan",
+      "first": "Lori",
+      "last": "Trahan",
+      "chamber": "house",
+      "state": "MA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Derek Tran",
+      "first": "Derek",
+      "last": "Tran",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Tommy Tuberville",
+      "first": "Tommy",
+      "last": "Tuberville",
+      "chamber": "senate",
+      "state": "AL",
+      "party": "Republican"
+    },
+    {
+      "name": "Michael R. Turner",
+      "first": "Michael",
+      "last": "Turner",
+      "chamber": "house",
+      "state": "OH",
+      "party": "Republican"
+    },
+    {
+      "name": "Lauren Underwood",
+      "first": "Lauren",
+      "last": "Underwood",
+      "chamber": "house",
+      "state": "IL",
+      "party": "Democrat"
+    },
+    {
+      "name": "David G. Valadao",
+      "first": "David",
+      "last": "Valadao",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Republican"
+    },
+    {
+      "name": "Jefferson Van Drew",
+      "first": "Jefferson",
+      "last": "Van Drew",
+      "chamber": "house",
+      "state": "NJ",
+      "party": "Republican"
+    },
+    {
+      "name": "Beth Van Duyne",
+      "first": "Beth",
+      "last": "Van Duyne",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Matt Van Epps",
+      "first": "Matt",
+      "last": "Van Epps",
+      "chamber": "house",
+      "state": "TN",
+      "party": "Republican"
+    },
+    {
+      "name": "Chris Van Hollen",
+      "first": "Chris",
+      "last": "Van Hollen",
+      "chamber": "senate",
+      "state": "MD",
+      "party": "Democrat"
+    },
+    {
+      "name": "Derrick Van Orden",
+      "first": "Derrick",
+      "last": "Van Orden",
+      "chamber": "house",
+      "state": "WI",
+      "party": "Republican"
+    },
+    {
+      "name": "Juan Vargas",
+      "first": "Juan",
+      "last": "Vargas",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Gabe Vasquez",
+      "first": "Gabriel (Gabe)",
+      "last": "Vasquez",
+      "chamber": "house",
+      "state": "NM",
+      "party": "Democrat"
+    },
+    {
+      "name": "Marc A. Veasey",
+      "first": "Marc",
+      "last": "Veasey",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Democrat"
+    },
+    {
+      "name": "Nydia M. Velázquez",
+      "first": "Nydia",
+      "last": "Velázquez",
+      "chamber": "house",
+      "state": "NY",
+      "party": "Democrat"
+    },
+    {
+      "name": "Eugene Simon Vindman",
+      "first": "Eugene",
+      "last": "Vindman",
+      "chamber": "house",
+      "state": "VA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Ann Wagner",
+      "first": "Ann",
+      "last": "Wagner",
+      "chamber": "house",
+      "state": "MO",
+      "party": "Republican"
+    },
+    {
+      "name": "Aisha Wahab",
+      "first": "Aisha",
+      "last": "Wahab",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Tim Walberg",
+      "first": "Tim",
+      "last": "Walberg",
+      "chamber": "house",
+      "state": "MI",
+      "party": "Republican"
+    },
+    {
+      "name": "James R. Walkinshaw",
+      "first": "James",
+      "last": "Walkinshaw",
+      "chamber": "house",
+      "state": "VA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Mark R. Warner",
+      "first": "Mark",
+      "last": "Warner",
+      "chamber": "senate",
+      "state": "VA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Raphael G. Warnock",
+      "first": "Raphael",
+      "last": "Warnock",
+      "chamber": "senate",
+      "state": "GA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Elizabeth Warren",
+      "first": "Elizabeth",
+      "last": "Warren",
+      "chamber": "senate",
+      "state": "MA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Debbie Wasserman Schultz",
+      "first": "Debbie",
+      "last": "Wasserman Schultz",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Maxine Waters",
+      "first": "Maxine",
+      "last": "Waters",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Bonnie Watson Coleman",
+      "first": "Bonnie",
+      "last": "Watson Coleman",
+      "chamber": "house",
+      "state": "NJ",
+      "party": "Democrat"
+    },
+    {
+      "name": "Randy K. Weber, Sr.",
+      "first": "Randy",
+      "last": "Weber",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Daniel Webster",
+      "first": "Daniel",
+      "last": "Webster",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Republican"
+    },
+    {
+      "name": "Peter Welch",
+      "first": "Peter",
+      "last": "Welch",
+      "chamber": "senate",
+      "state": "VT",
+      "party": "Democrat"
+    },
+    {
+      "name": "Bruce Westerman",
+      "first": "Bruce",
+      "last": "Westerman",
+      "chamber": "house",
+      "state": "AR",
+      "party": "Republican"
+    },
+    {
+      "name": "Sheldon Whitehouse",
+      "first": "Sheldon",
+      "last": "Whitehouse",
+      "chamber": "senate",
+      "state": "RI",
+      "party": "Democrat"
+    },
+    {
+      "name": "George Whitesides",
+      "first": "George",
+      "last": "Whitesides",
+      "chamber": "house",
+      "state": "CA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Roger F. Wicker",
+      "first": "Roger",
+      "last": "Wicker",
+      "chamber": "senate",
+      "state": "MS",
+      "party": "Republican"
+    },
+    {
+      "name": "Tony Wied",
+      "first": "Tony",
+      "last": "Wied",
+      "chamber": "house",
+      "state": "WI",
+      "party": "Republican"
+    },
+    {
+      "name": "Nikema Williams",
+      "first": "Nikema",
+      "last": "Williams",
+      "chamber": "house",
+      "state": "GA",
+      "party": "Democrat"
+    },
+    {
+      "name": "Roger Williams",
+      "first": "Roger",
+      "last": "Williams",
+      "chamber": "house",
+      "state": "TX",
+      "party": "Republican"
+    },
+    {
+      "name": "Frederica S. Wilson",
+      "first": "Frederica",
+      "last": "Wilson",
+      "chamber": "house",
+      "state": "FL",
+      "party": "Democrat"
+    },
+    {
+      "name": "Joe Wilson",
+      "first": "Joe",
+      "last": "Wilson",
+      "chamber": "house",
+      "state": "SC",
+      "party": "Republican"
+    },
+    {
+      "name": "Robert J. Wittman",
+      "first": "Robert",
+      "last": "Wittman",
+      "chamber": "house",
+      "state": "VA",
+      "party": "Republican"
+    },
+    {
+      "name": "Steve Womack",
+      "first": "Steve",
+      "last": "Womack",
+      "chamber": "house",
+      "state": "AR",
+      "party": "Republican"
+    },
+    {
+      "name": "Ron Wyden",
+      "first": "Ron",
+      "last": "Wyden",
+      "chamber": "senate",
+      "state": "OR",
+      "party": "Democrat"
+    },
+    {
+      "name": "Rudy Yakym III",
+      "first": "Rudy",
+      "last": "Yakym",
+      "chamber": "house",
+      "state": "IN",
+      "party": "Republican"
+    },
+    {
+      "name": "Todd Young",
+      "first": "Todd",
+      "last": "Young",
+      "chamber": "senate",
+      "state": "IN",
+      "party": "Republican"
+    },
+    {
+      "name": "Ryan K. Zinke",
+      "first": "Ryan",
+      "last": "Zinke",
+      "chamber": "house",
+      "state": "MT",
+      "party": "Republican"
+    }
+  ]
+}
