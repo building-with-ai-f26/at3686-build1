@@ -134,7 +134,7 @@ function renderNotes(summary) {
   const lag = summary.disclosure_lag_days;
   const allBuys = summary.by_group.reduce((s, g) => [s[0] + g.buy_amount_low, s[1] + g.buy_amount_high], [0, 0]);
   const allSells = summary.by_group.reduce((s, g) => [s[0] + g.sell_amount_low, s[1] + g.sell_amount_high], [0, 0]);
-  return `<p class="cg-totals">${summary.filtered ? `Trades of <strong>${escapeHtml(sizeLabel())}</strong>: ` : ""}<strong>${t.trades}</strong> disclosed trades: <strong>${t.buys}</strong> buys, <strong>${t.sells}</strong> sells${t.exchanges ? `, ${t.exchanges} exchange${t.exchanges === 1 ? "" : "s"}` : ""}.${
+  return `<p class="cg-totals">${summary.filtered ? `Trades of <strong>${escapeHtml(sizeLabel())}</strong>: ` : ""}<strong>${t.trades}</strong> disclosed trade${t.trades === 1 ? "" : "s"}: <strong>${t.buys}</strong> buy${t.buys === 1 ? "" : "s"}, <strong>${t.sells}</strong> sell${t.sells === 1 ? "" : "s"}${t.exchanges ? `, ${t.exchanges} exchange${t.exchanges === 1 ? "" : "s"}` : ""}.${
       summary.filtered ? "" : `
       Disclosed amounts: buys ${usd(allBuys[0])}–${usd(allBuys[1])}, sells ${usd(allSells[0])}–${usd(allSells[1])}.`}</p>
     <ul class="cg-notes meta">
