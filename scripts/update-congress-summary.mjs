@@ -90,7 +90,8 @@ async function writeIfChanged(name, data, ignoreKey) {
 }
 
 async function main() {
-  const lookup = buildPartyLookup((await getJson(LEGISLATORS)).data);
+  const legislators = (await getJson(LEGISLATORS)).data;
+  const lookup = buildPartyLookup(legislators);
 
   // Count every record Bargo returns. Bargo already de-duplicates; records that
   // look identical are usually separate trades (for example, the same purchase
@@ -154,6 +155,15 @@ async function main() {
   await mkdir(OUT_DIR, { recursive: true });
   await writeIfChanged("congress-ai-summary.json", summary, "generated_at");
   await writeIfChanged("party-lookup.json", { source: "https://github.com/unitedstates/congress-legislators (CC0)", ...lookup }, "_none");
+  // Current members' public names, for the search box's "Did you mean…?" help.
+  // From the public-domain legislators dataset, not from Bargo.
+  const memberList = legislators.map((person) => {
+    const term = person.terms[person.terms.length - 1];
+    const { first, last, nickname, official_full: full } = person.name;
+    return { name: full || `${nickname || first} ${last}`, first, ...(nickname ? { nickname } : {}), last,
+      chamber: term.type === "sen" ? "senate" : "house", state: term.state, party: term.party };
+  }).sort((a, b) => a.last.localeCompare(b.last) || a.name.localeCompare(b.name));
+  await writeIfChanged("members.json", { source: "https://github.com/unitedstates/congress-legislators (CC0)", members: memberList }, "_none");
   console.log(`${trades.length} AI-ticker trades · ${total.buys} buys / ${total.sells} sells · ${unmatched} without a party match`);
 }
 

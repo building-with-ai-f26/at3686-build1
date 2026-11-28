@@ -49,15 +49,26 @@ export const POLYMARKET_MARKETS = [
 ];
 
 // `measures`: one line on the card face saying what the signal is and which
-// way pushes froth up.
+// way pushes its score (and bubble risk) up.
 export const SIGNALS = [
   { id: "polymarket", name: "Polymarket AI-hype odds",
-    measures: "Betting odds on extreme AI outcomes (a $2.5T Anthropic, a $2T OpenAI IPO, AGI before 2027). Higher odds → more froth." },
+    measures: "Betting odds on extreme AI outcomes (a $2.5T Anthropic, a $2T OpenAI IPO, AGI before 2027). Higher odds → higher score." },
   { id: "openrouter", name: "OpenRouter model price trend",
-    measures: "Are new AI models launching cheaper than last year's? Cheaper launches → more froth." },
+    measures: "Are new AI models launching cheaper than last year's? Cheaper launches (labs racing for market share) → higher score." },
   { id: "manual", name: MANUAL_SIGNAL.label,
-    measures: "How much of all venture money goes to AI. Bigger share → more froth." },
+    measures: "How much of all venture money goes to AI. Bigger share → higher score." },
 ];
+
+// What a signal's 0–100 score means, in words shown under the number on its card.
+// Not "good" or "bad": a higher score just means that signal looks more bubble-like.
+export function signalLevel(score) {
+  if (!Number.isFinite(score)) return "";
+  if (score < 20) return "No bubble signs";
+  if (score < 40) return "Few bubble signs";
+  if (score < 60) return "Some bubble signs";
+  if (score < 80) return "Strong bubble signs";
+  return "Very strong bubble signs";
+}
 
 export const BOUNDS = {
   polymarket: { calm: 0.05, frothy: 0.5 },
